@@ -24,14 +24,14 @@ local Other = Instance.new("Frame")
 local BuyGrape = Instance.new("TextButton")
 local NoBob = Instance.new("TextButton")
 local InstaPrompt = Instance.new("TextButton")
-local OpGunTest = Instance.new("TextButton")
+local InfAmmo = Instance.new("TextButton")
 local BuyRice = Instance.new("TextButton")
 local BuySeed = Instance.new("TextButton")
 local NoDamage = Instance.new("TextButton")
 local InstantRespawn = Instance.new("TextButton")
 local DupeTest = Instance.new("TextButton")
 local NoHunger = Instance.new("TextButton")
-local InfSleep = Instance.new("TextButton")
+local FastGun = Instance.new("TextButton")
 local Frame_4 = Instance.new("Frame")
 local Jupito = Instance.new("TextLabel")
 local CloseButton = Instance.new("TextButton")
@@ -193,19 +193,19 @@ InstaPrompt.TextScaled = true
 InstaPrompt.TextSize = 14.000
 InstaPrompt.TextWrapped = true
 
-OpGunTest.Name = "OpGunTest"
-OpGunTest.Parent = Other
-OpGunTest.BackgroundColor3 = Color3.fromRGB(35, 35, 44)
-OpGunTest.BorderColor3 = Color3.fromRGB(0, 0, 0)
-OpGunTest.BorderSizePixel = 0
-OpGunTest.Position = UDim2.new(0, 0, 0.283999741, 0)
-OpGunTest.Size = UDim2.new(0.99999994, 0, 0.0948212966, 0)
-OpGunTest.Font = Enum.Font.SourceSans
-OpGunTest.Text = "TestGun"
-OpGunTest.TextColor3 = Color3.fromRGB(255, 255, 255)
-OpGunTest.TextScaled = true
-OpGunTest.TextSize = 14.000
-OpGunTest.TextWrapped = true
+InfAmmo.Name = "InfAmmo"
+InfAmmo.Parent = Other
+InfAmmo.BackgroundColor3 = Color3.fromRGB(35, 35, 44)
+InfAmmo.BorderColor3 = Color3.fromRGB(0, 0, 0)
+InfAmmo.BorderSizePixel = 0
+InfAmmo.Position = UDim2.new(0, 0, 0.283999741, 0)
+InfAmmo.Size = UDim2.new(0.99999994, 0, 0.0948212966, 0)
+InfAmmo.Font = Enum.Font.SourceSans
+InfAmmo.Text = "InfAmmo"
+InfAmmo.TextColor3 = Color3.fromRGB(255, 255, 255)
+InfAmmo.TextScaled = true
+InfAmmo.TextSize = 14.000
+InfAmmo.TextWrapped = true
 
 BuyRice.Name = "BuyRice"
 BuyRice.Parent = Other
@@ -291,19 +291,19 @@ NoHunger.TextScaled = true
 NoHunger.TextSize = 14.000
 NoHunger.TextWrapped = true
 
-InfSleep.Name = "InfSleep"
-InfSleep.Parent = Other
-InfSleep.BackgroundColor3 = Color3.fromRGB(35, 35, 44)
-InfSleep.BorderColor3 = Color3.fromRGB(0, 0, 0)
-InfSleep.BorderSizePixel = 0
-InfSleep.Position = UDim2.new(1.00564468, 0, 0.00799975544, 0)
-InfSleep.Size = UDim2.new(0.715310633, 0, 0.105415292, 0)
-InfSleep.Font = Enum.Font.SourceSans
-InfSleep.Text = "InfSleep"
-InfSleep.TextColor3 = Color3.fromRGB(255, 255, 255)
-InfSleep.TextScaled = true
-InfSleep.TextSize = 14.000
-InfSleep.TextWrapped = true
+FastGun.Name = "FastGun"
+FastGun.Parent = Other
+FastGun.BackgroundColor3 = Color3.fromRGB(35, 35, 44)
+FastGun.BorderColor3 = Color3.fromRGB(0, 0, 0)
+FastGun.BorderSizePixel = 0
+FastGun.Position = UDim2.new(1, 0, -2.44140608e-07, 0)
+FastGun.Size = UDim2.new(0.720955253, 0, 0.0948212966, 0)
+FastGun.Font = Enum.Font.SourceSans
+FastGun.Text = "FastGun"
+FastGun.TextColor3 = Color3.fromRGB(255, 255, 255)
+FastGun.TextScaled = true
+FastGun.TextSize = 14.000
+FastGun.TextWrapped = true
 
 Frame_4.Parent = Frame
 Frame_4.BackgroundColor3 = Color3.fromRGB(38, 40, 43)
@@ -358,7 +358,7 @@ OpenButton.TextWrapped = true
 
 -- Scripts:
 
-local function BWBVHO_fake_script() -- Teleports.LocalScript 
+local function FAAKMO_fake_script() -- Teleports.LocalScript 
 	local script = Instance.new('LocalScript', Teleports)
 
 	-- Parent the script under the 'Teleports' frame or adjust references accordingly
@@ -409,8 +409,8 @@ local function BWBVHO_fake_script() -- Teleports.LocalScript
 	buttonTemplate:Destroy()
 	
 end
-coroutine.wrap(BWBVHO_fake_script)()
-local function UOHN_fake_script() -- BuyGrape.LocalScript 
+coroutine.wrap(FAAKMO_fake_script)()
+local function KVKFV_fake_script() -- BuyGrape.LocalScript 
 	local script = Instance.new('LocalScript', BuyGrape)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -422,8 +422,8 @@ local function UOHN_fake_script() -- BuyGrape.LocalScript
 	end)
 	
 end
-coroutine.wrap(UOHN_fake_script)()
-local function YLMQKOM_fake_script() -- NoBob.LocalScript 
+coroutine.wrap(KVKFV_fake_script)()
+local function MNWNU_fake_script() -- NoBob.LocalScript 
 	local script = Instance.new('LocalScript', NoBob)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -431,8 +431,8 @@ local function YLMQKOM_fake_script() -- NoBob.LocalScript
 	end)
 	
 end
-coroutine.wrap(YLMQKOM_fake_script)()
-local function GKQU_fake_script() -- InstaPrompt.LocalScript 
+coroutine.wrap(MNWNU_fake_script)()
+local function VZYYMCK_fake_script() -- InstaPrompt.LocalScript 
 	local script = Instance.new('LocalScript', InstaPrompt)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -451,9 +451,9 @@ local function GKQU_fake_script() -- InstaPrompt.LocalScript
 	end)
 	
 end
-coroutine.wrap(GKQU_fake_script)()
-local function YJMIFI_fake_script() -- OpGunTest.LocalScript 
-	local script = Instance.new('LocalScript', OpGunTest)
+coroutine.wrap(VZYYMCK_fake_script)()
+local function BTVLT_fake_script() -- InfAmmo.LocalScript 
+	local script = Instance.new('LocalScript', InfAmmo)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		-- Script to find LocalPlayer's 'Setting' ModuleScript in Workspace
@@ -481,15 +481,9 @@ local function YJMIFI_fake_script() -- OpGunTest.LocalScript
 			if settingModule then
 				local settings = require(gun)  -- Require the module script
 				settings.LimitedAmmoEnabled = false
-				settings.AmmoPerMag = math.huge
-				settings.Ammo = math.huge
-				settings.MaxAmmo = math.huge
-				settings.FireRate = 0
-				settings.Auto = true
-				settings.BulletPerShot = math.huge
-				settings.BurstFireEnabled = true
-				settings.BulletPerBurst = math.huge
-				settings.BurstRate = 0
+				settings.AmmoPerMag = 999999
+				settings.Ammo = 999999
+				settings.MaxAmmo = 999999
 				print("Test: ".. settings.Ammo)
 			else
 				warn("'Setting' ModuleScript not found in the character.")
@@ -500,8 +494,8 @@ local function YJMIFI_fake_script() -- OpGunTest.LocalScript
 	end)
 	
 end
-coroutine.wrap(YJMIFI_fake_script)()
-local function QEQBI_fake_script() -- BuyRice.LocalScript 
+coroutine.wrap(BTVLT_fake_script)()
+local function JFSD_fake_script() -- BuyRice.LocalScript 
 	local script = Instance.new('LocalScript', BuyRice)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -513,8 +507,8 @@ local function QEQBI_fake_script() -- BuyRice.LocalScript
 	end)
 	
 end
-coroutine.wrap(QEQBI_fake_script)()
-local function KJWSX_fake_script() -- BuySeed.LocalScript 
+coroutine.wrap(JFSD_fake_script)()
+local function OPGMKCQ_fake_script() -- BuySeed.LocalScript 
 	local script = Instance.new('LocalScript', BuySeed)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -526,8 +520,8 @@ local function KJWSX_fake_script() -- BuySeed.LocalScript
 	end)
 	
 end
-coroutine.wrap(KJWSX_fake_script)()
-local function NKBTM_fake_script() -- NoDamage.LocalScript 
+coroutine.wrap(OPGMKCQ_fake_script)()
+local function JBATT_fake_script() -- NoDamage.LocalScript 
 	local script = Instance.new('LocalScript', NoDamage)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -536,8 +530,8 @@ local function NKBTM_fake_script() -- NoDamage.LocalScript
 	end)
 	
 end
-coroutine.wrap(NKBTM_fake_script)()
-local function MIACD_fake_script() -- InstantRespawn.LocalScript 
+coroutine.wrap(JBATT_fake_script)()
+local function HQRVASX_fake_script() -- InstantRespawn.LocalScript 
 	local script = Instance.new('LocalScript', InstantRespawn)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -545,8 +539,8 @@ local function MIACD_fake_script() -- InstantRespawn.LocalScript
 	end)
 	
 end
-coroutine.wrap(MIACD_fake_script)()
-local function RFSLAQ_fake_script() -- DupeTest.LocalScript 
+coroutine.wrap(HQRVASX_fake_script)()
+local function DMJNK_fake_script() -- DupeTest.LocalScript 
 	local script = Instance.new('LocalScript', DupeTest)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -586,8 +580,8 @@ local function RFSLAQ_fake_script() -- DupeTest.LocalScript
 	end)
 	
 end
-coroutine.wrap(RFSLAQ_fake_script)()
-local function ZPZAXE_fake_script() -- NoHunger.LocalScript 
+coroutine.wrap(DMJNK_fake_script)()
+local function YXFGTR_fake_script() -- NoHunger.LocalScript 
 	local script = Instance.new('LocalScript', NoHunger)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -605,20 +599,51 @@ local function ZPZAXE_fake_script() -- NoHunger.LocalScript
 	end)
 	
 end
-coroutine.wrap(ZPZAXE_fake_script)()
-local function GRAIHMA_fake_script() -- InfSleep.LocalScript 
-	local script = Instance.new('LocalScript', InfSleep)
+coroutine.wrap(YXFGTR_fake_script)()
+local function QWZN_fake_script() -- FastGun.LocalScript 
+	local script = Instance.new('LocalScript', FastGun)
 
 	script.Parent.MouseButton1Click:Connect(function()
-		shared.Sleeping = true
-		task.wait(2)
-		shared.Wokeness = 100
-		print("Sleep Test")
+		-- Script to find LocalPlayer's 'Setting' ModuleScript in Workspace
+	
+		-- Define a function to find a module script by name in a given model
+		local function findModuleScriptInCharacter(character, moduleName)
+			for _, descendant in ipairs(character:GetDescendants()) do
+				if descendant:IsA("ModuleScript") and descendant.Name == moduleName then
+					return descendant
+				end
+			end
+			return nil  -- Return nil if not found
+		end
+	
+		-- Main execution
+		local Players = game:GetService("Players")
+		local Workspace = game:GetService("Workspace")
+	
+		local localPlayer = Players.LocalPlayer  -- Get the local player
+		if localPlayer then
+			local character = localPlayer.Character or localPlayer.CharacterAdded:Wait()  -- Wait if character not yet loaded
+			local settingModule = findModuleScriptInCharacter(character, "Setting")
+			local gun = settingModule  -- Assigning the found moduleScript to 'gun'
+	
+			if settingModule then
+				local settings = require(gun)  -- Require the module script
+				settings.MinigunEnabled = true
+				settings.AfterBeforeFiring = 0
+				settings.DelayBeforeFiring = 0
+				settings.ReloadTime = 0
+				print("Test: ".. settings.Ammo)
+			else
+				warn("'Setting' ModuleScript not found in the character.")
+			end
+		else
+			warn("LocalPlayer not found.")
+		end
 	end)
 	
 end
-coroutine.wrap(GRAIHMA_fake_script)()
-local function NRURM_fake_script() -- CloseButton.LocalScript 
+coroutine.wrap(QWZN_fake_script)()
+local function XIJVLB_fake_script() -- CloseButton.LocalScript 
 	local script = Instance.new('LocalScript', CloseButton)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -626,20 +651,20 @@ local function NRURM_fake_script() -- CloseButton.LocalScript
 		script.Parent.Parent.Parent.Visible = false
 	end)
 end
-coroutine.wrap(NRURM_fake_script)()
-local function GGDLHE_fake_script() -- Frame_4.LocalScript 
+coroutine.wrap(XIJVLB_fake_script)()
+local function FUOF_fake_script() -- Frame_4.LocalScript 
 	local script = Instance.new('LocalScript', Frame_4)
 
 	script.Parent.Draggable = true
 end
-coroutine.wrap(GGDLHE_fake_script)()
-local function BCHQOA_fake_script() -- Frame.LocalScript 
+coroutine.wrap(FUOF_fake_script)()
+local function QMRVWRU_fake_script() -- Frame.LocalScript 
 	local script = Instance.new('LocalScript', Frame)
 
 	script.Parent.Draggable = true
 end
-coroutine.wrap(BCHQOA_fake_script)()
-local function GXGKN_fake_script() -- OpenButton.LocalScript 
+coroutine.wrap(QMRVWRU_fake_script)()
+local function VMAFYCI_fake_script() -- OpenButton.LocalScript 
 	local script = Instance.new('LocalScript', OpenButton)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -647,4 +672,4 @@ local function GXGKN_fake_script() -- OpenButton.LocalScript
 		script.Parent.Parent.Frame.Visible = true
 	end)
 end
-coroutine.wrap(GXGKN_fake_script)()
+coroutine.wrap(VMAFYCI_fake_script)()

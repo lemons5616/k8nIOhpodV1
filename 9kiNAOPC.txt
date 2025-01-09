@@ -30,6 +30,8 @@ local BuySeed = Instance.new("TextButton")
 local NoDamage = Instance.new("TextButton")
 local InstantRespawn = Instance.new("TextButton")
 local DupeTest = Instance.new("TextButton")
+local NoHunger = Instance.new("TextButton")
+local InfSleep = Instance.new("TextButton")
 local Frame_4 = Instance.new("Frame")
 local Jupito = Instance.new("TextLabel")
 local CloseButton = Instance.new("TextButton")
@@ -47,8 +49,8 @@ Frame.Active = true
 Frame.BackgroundColor3 = Color3.fromRGB(29, 29, 34)
 Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Frame.BorderSizePixel = 0
-Frame.Position = UDim2.new(-0.000406636682, 0, 0.601766229, 0)
-Frame.Size = UDim2.new(0.346190482, 0, 0.398147821, 0)
+Frame.Position = UDim2.new(-0.000406647858, 0, 0.601766229, 0)
+Frame.Size = UDim2.new(0.377963513, 0, 0.398147851, 0)
 Frame.Visible = false
 
 Frame_2.Parent = Frame
@@ -109,7 +111,8 @@ Teleports.Parent = Frame_3
 Teleports.BackgroundColor3 = Color3.fromRGB(31, 31, 36)
 Teleports.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Teleports.BorderSizePixel = 0
-Teleports.Size = UDim2.new(0.534626067, 0, 1.00401604, 0)
+Teleports.Position = UDim2.new(-3.8714898e-08, 0, 0, 0)
+Teleports.Size = UDim2.new(0.379967451, 0, 1.00401604, 0)
 
 TeleportsLabel.Name = "TeleportsLabel"
 TeleportsLabel.Parent = Teleports
@@ -145,8 +148,8 @@ Other.Parent = Frame_3
 Other.BackgroundColor3 = Color3.fromRGB(31, 31, 36)
 Other.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Other.BorderSizePixel = 0
-Other.Position = UDim2.new(0.580612898, 0, 0, 0)
-Other.Size = UDim2.new(0.418282539, 0, 1.00401604, 0)
+Other.Position = UDim2.new(0.379967391, 0, 0, 0)
+Other.Size = UDim2.new(0.360932022, 0, 1.00401604, 0)
 
 BuyGrape.Name = "BuyGrape"
 BuyGrape.Parent = Other
@@ -266,13 +269,41 @@ DupeTest.BackgroundColor3 = Color3.fromRGB(35, 35, 44)
 DupeTest.BorderColor3 = Color3.fromRGB(0, 0, 0)
 DupeTest.BorderSizePixel = 0
 DupeTest.Position = UDim2.new(0, 0, 0.743999779, 0)
-DupeTest.Size = UDim2.new(1, 0, 0.183865234, 0)
+DupeTest.Size = UDim2.new(1, 0, 0.105415292, 0)
 DupeTest.Font = Enum.Font.SourceSans
 DupeTest.Text = " DupeTest (HOLD ITEM FIRST)"
 DupeTest.TextColor3 = Color3.fromRGB(255, 255, 255)
 DupeTest.TextScaled = true
 DupeTest.TextSize = 14.000
 DupeTest.TextWrapped = true
+
+NoHunger.Name = "NoHunger"
+NoHunger.Parent = Other
+NoHunger.BackgroundColor3 = Color3.fromRGB(35, 35, 44)
+NoHunger.BorderColor3 = Color3.fromRGB(0, 0, 0)
+NoHunger.BorderSizePixel = 0
+NoHunger.Position = UDim2.new(-0.00662251655, 0, 0.847999752, 0)
+NoHunger.Size = UDim2.new(1, 0, 0.105415292, 0)
+NoHunger.Font = Enum.Font.SourceSans
+NoHunger.Text = "NoHunger"
+NoHunger.TextColor3 = Color3.fromRGB(255, 255, 255)
+NoHunger.TextScaled = true
+NoHunger.TextSize = 14.000
+NoHunger.TextWrapped = true
+
+InfSleep.Name = "InfSleep"
+InfSleep.Parent = Other
+InfSleep.BackgroundColor3 = Color3.fromRGB(35, 35, 44)
+InfSleep.BorderColor3 = Color3.fromRGB(0, 0, 0)
+InfSleep.BorderSizePixel = 0
+InfSleep.Position = UDim2.new(1.00564468, 0, 0.00799975544, 0)
+InfSleep.Size = UDim2.new(0.715310633, 0, 0.105415292, 0)
+InfSleep.Font = Enum.Font.SourceSans
+InfSleep.Text = "InfSleep"
+InfSleep.TextColor3 = Color3.fromRGB(255, 255, 255)
+InfSleep.TextScaled = true
+InfSleep.TextSize = 14.000
+InfSleep.TextWrapped = true
 
 Frame_4.Parent = Frame
 Frame_4.BackgroundColor3 = Color3.fromRGB(38, 40, 43)
@@ -327,7 +358,7 @@ OpenButton.TextWrapped = true
 
 -- Scripts:
 
-local function EJGRW_fake_script() -- Teleports.LocalScript 
+local function FIHRIR_fake_script() -- Teleports.LocalScript 
 	local script = Instance.new('LocalScript', Teleports)
 
 	-- Parent the script under the 'Teleports' frame or adjust references accordingly
@@ -378,8 +409,8 @@ local function EJGRW_fake_script() -- Teleports.LocalScript
 	buttonTemplate:Destroy()
 	
 end
-coroutine.wrap(EJGRW_fake_script)()
-local function YCSYY_fake_script() -- BuyGrape.LocalScript 
+coroutine.wrap(FIHRIR_fake_script)()
+local function GEME_fake_script() -- BuyGrape.LocalScript 
 	local script = Instance.new('LocalScript', BuyGrape)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -391,8 +422,8 @@ local function YCSYY_fake_script() -- BuyGrape.LocalScript
 	end)
 	
 end
-coroutine.wrap(YCSYY_fake_script)()
-local function VPRYW_fake_script() -- NoBob.LocalScript 
+coroutine.wrap(GEME_fake_script)()
+local function AVVU_fake_script() -- NoBob.LocalScript 
 	local script = Instance.new('LocalScript', NoBob)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -400,8 +431,8 @@ local function VPRYW_fake_script() -- NoBob.LocalScript
 	end)
 	
 end
-coroutine.wrap(VPRYW_fake_script)()
-local function QKRGAVP_fake_script() -- InstaPrompt.LocalScript 
+coroutine.wrap(AVVU_fake_script)()
+local function JVGU_fake_script() -- InstaPrompt.LocalScript 
 	local script = Instance.new('LocalScript', InstaPrompt)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -420,8 +451,8 @@ local function QKRGAVP_fake_script() -- InstaPrompt.LocalScript
 	end)
 	
 end
-coroutine.wrap(QKRGAVP_fake_script)()
-local function KIDH_fake_script() -- OpGunTest.LocalScript 
+coroutine.wrap(JVGU_fake_script)()
+local function PJSD_fake_script() -- OpGunTest.LocalScript 
 	local script = Instance.new('LocalScript', OpGunTest)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -463,8 +494,8 @@ local function KIDH_fake_script() -- OpGunTest.LocalScript
 	end)
 	
 end
-coroutine.wrap(KIDH_fake_script)()
-local function KHGEZDB_fake_script() -- BuyRice.LocalScript 
+coroutine.wrap(PJSD_fake_script)()
+local function ALQOZ_fake_script() -- BuyRice.LocalScript 
 	local script = Instance.new('LocalScript', BuyRice)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -476,8 +507,8 @@ local function KHGEZDB_fake_script() -- BuyRice.LocalScript
 	end)
 	
 end
-coroutine.wrap(KHGEZDB_fake_script)()
-local function PWCM_fake_script() -- BuySeed.LocalScript 
+coroutine.wrap(ALQOZ_fake_script)()
+local function YBNO_fake_script() -- BuySeed.LocalScript 
 	local script = Instance.new('LocalScript', BuySeed)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -489,8 +520,8 @@ local function PWCM_fake_script() -- BuySeed.LocalScript
 	end)
 	
 end
-coroutine.wrap(PWCM_fake_script)()
-local function UXCSKNA_fake_script() -- NoDamage.LocalScript 
+coroutine.wrap(YBNO_fake_script)()
+local function ORPR_fake_script() -- NoDamage.LocalScript 
 	local script = Instance.new('LocalScript', NoDamage)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -499,8 +530,8 @@ local function UXCSKNA_fake_script() -- NoDamage.LocalScript
 	end)
 	
 end
-coroutine.wrap(UXCSKNA_fake_script)()
-local function UDPVDK_fake_script() -- InstantRespawn.LocalScript 
+coroutine.wrap(ORPR_fake_script)()
+local function UQVWWEV_fake_script() -- InstantRespawn.LocalScript 
 	local script = Instance.new('LocalScript', InstantRespawn)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -508,8 +539,8 @@ local function UDPVDK_fake_script() -- InstantRespawn.LocalScript
 	end)
 	
 end
-coroutine.wrap(UDPVDK_fake_script)()
-local function SBCLHM_fake_script() -- DupeTest.LocalScript 
+coroutine.wrap(UQVWWEV_fake_script)()
+local function BHTWFJ_fake_script() -- DupeTest.LocalScript 
 	local script = Instance.new('LocalScript', DupeTest)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -536,8 +567,6 @@ local function SBCLHM_fake_script() -- DupeTest.LocalScript
 			for _ = 1, 2 do
 				game:GetService("ReplicatedStorage"):WaitForChild("Inventory"):FireServer(unpack(argsBackpack))
 			end
-			
-			task.wait(1)
 	
 			local argsInventory = {
 				[1] = "Change",
@@ -551,8 +580,36 @@ local function SBCLHM_fake_script() -- DupeTest.LocalScript
 	end)
 	
 end
-coroutine.wrap(SBCLHM_fake_script)()
-local function OQKXZ_fake_script() -- CloseButton.LocalScript 
+coroutine.wrap(BHTWFJ_fake_script)()
+local function XZXUB_fake_script() -- NoHunger.LocalScript 
+	local script = Instance.new('LocalScript', NoHunger)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		local player = game:GetService("Players").LocalPlayer
+		local hungerBarScript = player:WaitForChild("PlayerGui")
+			:WaitForChild("Hunger")
+			:WaitForChild("Frame")
+			:WaitForChild("Frame")
+			:WaitForChild("Frame")
+			:FindFirstChild("HungerBarScript")
+	
+		if hungerBarScript and hungerBarScript:IsA("LocalScript") then
+			hungerBarScript.Disabled = true
+		end
+	end)
+	
+end
+coroutine.wrap(XZXUB_fake_script)()
+local function WSOOTY_fake_script() -- InfSleep.LocalScript 
+	local script = Instance.new('LocalScript', InfSleep)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		shared.Wokeness = 100
+	end)
+	
+end
+coroutine.wrap(WSOOTY_fake_script)()
+local function NKHBK_fake_script() -- CloseButton.LocalScript 
 	local script = Instance.new('LocalScript', CloseButton)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -560,20 +617,20 @@ local function OQKXZ_fake_script() -- CloseButton.LocalScript
 		script.Parent.Parent.Parent.Visible = false
 	end)
 end
-coroutine.wrap(OQKXZ_fake_script)()
-local function TBNFR_fake_script() -- Frame_4.LocalScript 
+coroutine.wrap(NKHBK_fake_script)()
+local function OFBZKNU_fake_script() -- Frame_4.LocalScript 
 	local script = Instance.new('LocalScript', Frame_4)
 
 	script.Parent.Draggable = true
 end
-coroutine.wrap(TBNFR_fake_script)()
-local function BTYGC_fake_script() -- Frame.LocalScript 
+coroutine.wrap(OFBZKNU_fake_script)()
+local function FDLGMC_fake_script() -- Frame.LocalScript 
 	local script = Instance.new('LocalScript', Frame)
 
 	script.Parent.Draggable = true
 end
-coroutine.wrap(BTYGC_fake_script)()
-local function IJSWTLM_fake_script() -- OpenButton.LocalScript 
+coroutine.wrap(FDLGMC_fake_script)()
+local function MQQXEAK_fake_script() -- OpenButton.LocalScript 
 	local script = Instance.new('LocalScript', OpenButton)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -581,4 +638,4 @@ local function IJSWTLM_fake_script() -- OpenButton.LocalScript
 		script.Parent.Parent.Frame.Visible = true
 	end)
 end
-coroutine.wrap(IJSWTLM_fake_script)()
+coroutine.wrap(MQQXEAK_fake_script)()

@@ -24,6 +24,8 @@ local OpGunTest = Instance.new("TextButton")
 local BuyRice = Instance.new("TextButton")
 local BuySeed = Instance.new("TextButton")
 local NoDamage = Instance.new("TextButton")
+local InstantRespawn = Instance.new("TextButton")
+local DupeTest = Instance.new("TextButton")
 local Frame_4 = Instance.new("Frame")
 local Jupito = Instance.new("TextLabel")
 local CloseButton = Instance.new("TextButton")
@@ -240,6 +242,34 @@ NoDamage.TextScaled = true
 NoDamage.TextSize = 14.000
 NoDamage.TextWrapped = true
 
+InstantRespawn.Name = "InstantRespawn"
+InstantRespawn.Parent = Other
+InstantRespawn.BackgroundColor3 = Color3.fromRGB(35, 35, 44)
+InstantRespawn.BorderColor3 = Color3.fromRGB(0, 0, 0)
+InstantRespawn.BorderSizePixel = 0
+InstantRespawn.Position = UDim2.new(0, 0, 0.651999772, 0)
+InstantRespawn.Size = UDim2.new(0.99999994, 0, 0.0948212966, 0)
+InstantRespawn.Font = Enum.Font.SourceSans
+InstantRespawn.Text = "InstantRespawn"
+InstantRespawn.TextColor3 = Color3.fromRGB(255, 255, 255)
+InstantRespawn.TextScaled = true
+InstantRespawn.TextSize = 14.000
+InstantRespawn.TextWrapped = true
+
+DupeTest.Name = "DupeTest"
+DupeTest.Parent = Other
+DupeTest.BackgroundColor3 = Color3.fromRGB(35, 35, 44)
+DupeTest.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DupeTest.BorderSizePixel = 0
+DupeTest.Position = UDim2.new(0, 0, 0.743999779, 0)
+DupeTest.Size = UDim2.new(1, 0, 0.183865234, 0)
+DupeTest.Font = Enum.Font.SourceSans
+DupeTest.Text = " DupeTest (HOLD ITEM FIRST)"
+DupeTest.TextColor3 = Color3.fromRGB(255, 255, 255)
+DupeTest.TextScaled = true
+DupeTest.TextSize = 14.000
+DupeTest.TextWrapped = true
+
 Frame_4.Parent = Frame
 Frame_4.BackgroundColor3 = Color3.fromRGB(38, 40, 43)
 Frame_4.BorderColor3 = Color3.fromRGB(62, 62, 62)
@@ -282,18 +312,18 @@ OpenButton.Parent = JupitoGang
 OpenButton.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
 OpenButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
 OpenButton.BorderSizePixel = 0
-OpenButton.Position = UDim2.new(0, 0, 0.942406058, 0)
+OpenButton.Position = UDim2.new(0.0204978045, 0, 0.900685072, 0)
 OpenButton.Size = UDim2.new(0.131771594, 0, 0.0573663637, 0)
-OpenButton.Font = Enum.Font.SourceSans
+OpenButton.Font = Enum.Font.RobotoMono
 OpenButton.Text = "Open Jupito"
-OpenButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+OpenButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 OpenButton.TextScaled = true
 OpenButton.TextSize = 14.000
 OpenButton.TextWrapped = true
 
 -- Scripts:
 
-local function PQSO_fake_script() -- Teleports.LocalScript 
+local function CMNTND_fake_script() -- Teleports.LocalScript 
 	local script = Instance.new('LocalScript', Teleports)
 
 	-- Parent the script under the 'Teleports' frame or adjust references accordingly
@@ -344,8 +374,8 @@ local function PQSO_fake_script() -- Teleports.LocalScript
 	buttonTemplate:Destroy()
 	
 end
-coroutine.wrap(PQSO_fake_script)()
-local function RXORUX_fake_script() -- BuyGrape.LocalScript 
+coroutine.wrap(CMNTND_fake_script)()
+local function CVUZQ_fake_script() -- BuyGrape.LocalScript 
 	local script = Instance.new('LocalScript', BuyGrape)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -357,17 +387,17 @@ local function RXORUX_fake_script() -- BuyGrape.LocalScript
 	end)
 	
 end
-coroutine.wrap(RXORUX_fake_script)()
-local function DNFB_fake_script() -- NoBob.LocalScript 
+coroutine.wrap(CVUZQ_fake_script)()
+local function WXDAQBX_fake_script() -- NoBob.LocalScript 
 	local script = Instance.new('LocalScript', NoBob)
 
 	script.Parent.MouseButton1Click:Connect(function()
-		game.Players.LocalPlayer.PlayerGui:WaitForChild("Tilt").Enabled = false
+		game.Players.LocalPlayer.PlayerGui:WaitForChild("Tilt"):Destroy()
 	end)
 	
 end
-coroutine.wrap(DNFB_fake_script)()
-local function PUUZY_fake_script() -- InstaPrompt.LocalScript 
+coroutine.wrap(WXDAQBX_fake_script)()
+local function QTFLKX_fake_script() -- InstaPrompt.LocalScript 
 	local script = Instance.new('LocalScript', InstaPrompt)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -386,8 +416,8 @@ local function PUUZY_fake_script() -- InstaPrompt.LocalScript
 	end)
 	
 end
-coroutine.wrap(PUUZY_fake_script)()
-local function HJKXIPI_fake_script() -- OpGunTest.LocalScript 
+coroutine.wrap(QTFLKX_fake_script)()
+local function EXMJ_fake_script() -- OpGunTest.LocalScript 
 	local script = Instance.new('LocalScript', OpGunTest)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -419,7 +449,7 @@ local function HJKXIPI_fake_script() -- OpGunTest.LocalScript
 				settings.AmmoPerMag = 9999
 				settings.Ammo = 9999
 				settings.MaxAmmo = 9999
-				print("Found 'Setting' ModuleScript:", settingModule:GetFullName())
+				print("Test: ".. settings.Ammo)
 			else
 				warn("'Setting' ModuleScript not found in the character.")
 			end
@@ -429,8 +459,8 @@ local function HJKXIPI_fake_script() -- OpGunTest.LocalScript
 	end)
 	
 end
-coroutine.wrap(HJKXIPI_fake_script)()
-local function KKMQZSH_fake_script() -- BuyRice.LocalScript 
+coroutine.wrap(EXMJ_fake_script)()
+local function KYQWJ_fake_script() -- BuyRice.LocalScript 
 	local script = Instance.new('LocalScript', BuyRice)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -442,30 +472,75 @@ local function KKMQZSH_fake_script() -- BuyRice.LocalScript
 	end)
 	
 end
-coroutine.wrap(KKMQZSH_fake_script)()
-local function PWDWYAN_fake_script() -- BuySeed.LocalScript 
+coroutine.wrap(KYQWJ_fake_script)()
+local function IHCT_fake_script() -- BuySeed.LocalScript 
 	local script = Instance.new('LocalScript', BuySeed)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		local args = {
-			[1] = "Seed"
+			[1] = "Seeds"
 		}
 	
 		game:GetService("ReplicatedStorage"):WaitForChild("ExoticShopRemote"):InvokeServer(unpack(args))
 	end)
 	
 end
-coroutine.wrap(PWDWYAN_fake_script)()
-local function IUCQUQ_fake_script() -- NoDamage.LocalScript 
+coroutine.wrap(IHCT_fake_script)()
+local function RLYFUMU_fake_script() -- NoDamage.LocalScript 
 	local script = Instance.new('LocalScript', NoDamage)
 
 	script.Parent.MouseButton1Click:Connect(function()
-		game:GetService("Players").LocalPlayer.Character.FallDamageRagdoll.Damage.Destroy()
+		game:GetService("Players").LocalPlayer.Character.FallDamageRagdoll.Damage:Destroy()
+	
 	end)
 	
 end
-coroutine.wrap(IUCQUQ_fake_script)()
-local function NQXHF_fake_script() -- CloseButton.LocalScript 
+coroutine.wrap(RLYFUMU_fake_script)()
+local function JIGXHK_fake_script() -- InstantRespawn.LocalScript 
+	local script = Instance.new('LocalScript', InstantRespawn)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		game:GetService("ReplicatedStorage"):WaitForChild("Died"):Destroy()
+	end)
+	
+end
+coroutine.wrap(JIGXHK_fake_script)()
+local function WVEIZWE_fake_script() -- DupeTest.LocalScript 
+	local script = Instance.new('LocalScript', DupeTest)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		local player = game:GetService("Players").LocalPlayer
+		local character = player.Character or player.CharacterAdded:Wait()
+		local tool = character:FindFirstChildOfClass("Tool")
+	
+		if tool then
+			local argsBackpack = {
+				[1] = "Change",
+				[2] = tool.Name, -- Uses the name of the current tool
+				[3] = "Backpack",
+				[4] = workspace:WaitForChild("1# Map"):WaitForChild("Safe")
+			}
+	
+			-- Fire twice with "Backpack"
+			for _ = 1, 2 do
+				game:GetService("ReplicatedStorage"):WaitForChild("Inventory"):FireServer(unpack(argsBackpack))
+			end
+	
+			-- Wait 2 seconds and then fire with "Inventory"
+			task.wait(2)
+			local argsInventory = {
+				[1] = "Change",
+				[2] = tool.Name,
+				[3] = "Inventory",
+				[4] = workspace:WaitForChild("1# Map"):WaitForChild("Safe")
+			}
+			game:GetService("ReplicatedStorage"):WaitForChild("Inventory"):FireServer(unpack(argsInventory))
+		end
+	end)
+	
+end
+coroutine.wrap(WVEIZWE_fake_script)()
+local function SQCKDY_fake_script() -- CloseButton.LocalScript 
 	local script = Instance.new('LocalScript', CloseButton)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -473,20 +548,20 @@ local function NQXHF_fake_script() -- CloseButton.LocalScript
 		script.Parent.Parent.Parent.Visible = false
 	end)
 end
-coroutine.wrap(NQXHF_fake_script)()
-local function AWRI_fake_script() -- Frame_4.LocalScript 
+coroutine.wrap(SQCKDY_fake_script)()
+local function OGVGDCM_fake_script() -- Frame_4.LocalScript 
 	local script = Instance.new('LocalScript', Frame_4)
 
 	script.Parent.Draggable = true
 end
-coroutine.wrap(AWRI_fake_script)()
-local function LRBBVAX_fake_script() -- Frame.LocalScript 
+coroutine.wrap(OGVGDCM_fake_script)()
+local function ROZXCSS_fake_script() -- Frame.LocalScript 
 	local script = Instance.new('LocalScript', Frame)
 
 	script.Parent.Draggable = true
 end
-coroutine.wrap(LRBBVAX_fake_script)()
-local function GUPCMS_fake_script() -- OpenButton.LocalScript 
+coroutine.wrap(ROZXCSS_fake_script)()
+local function RYQW_fake_script() -- OpenButton.LocalScript 
 	local script = Instance.new('LocalScript', OpenButton)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -494,4 +569,4 @@ local function GUPCMS_fake_script() -- OpenButton.LocalScript
 		script.Parent.Parent.Frame.Visible = true
 	end)
 end
-coroutine.wrap(GUPCMS_fake_script)()
+coroutine.wrap(RYQW_fake_script)()

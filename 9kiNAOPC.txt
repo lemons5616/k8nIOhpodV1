@@ -3,6 +3,10 @@
 
 -- Instances:
 
+if (game.Players.LocalPlayer.PlayerGui:FindFirstChild("JupitoGang")) then
+	game.Players.LocalPlayer.PlayerGui:FindFirstChild("JupitoGang"):Destroy()
+end
+
 local JupitoGang = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
 local Frame_2 = Instance.new("Frame")
@@ -323,7 +327,7 @@ OpenButton.TextWrapped = true
 
 -- Scripts:
 
-local function JLEIH_fake_script() -- Teleports.LocalScript 
+local function CANK_fake_script() -- Teleports.LocalScript 
 	local script = Instance.new('LocalScript', Teleports)
 
 	-- Parent the script under the 'Teleports' frame or adjust references accordingly
@@ -374,8 +378,8 @@ local function JLEIH_fake_script() -- Teleports.LocalScript
 	buttonTemplate:Destroy()
 	
 end
-coroutine.wrap(JLEIH_fake_script)()
-local function KCDLF_fake_script() -- BuyGrape.LocalScript 
+coroutine.wrap(CANK_fake_script)()
+local function MNQKKFL_fake_script() -- BuyGrape.LocalScript 
 	local script = Instance.new('LocalScript', BuyGrape)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -387,8 +391,8 @@ local function KCDLF_fake_script() -- BuyGrape.LocalScript
 	end)
 	
 end
-coroutine.wrap(KCDLF_fake_script)()
-local function LOKISP_fake_script() -- NoBob.LocalScript 
+coroutine.wrap(MNQKKFL_fake_script)()
+local function XOGUTK_fake_script() -- NoBob.LocalScript 
 	local script = Instance.new('LocalScript', NoBob)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -396,8 +400,8 @@ local function LOKISP_fake_script() -- NoBob.LocalScript
 	end)
 	
 end
-coroutine.wrap(LOKISP_fake_script)()
-local function CSZVWOJ_fake_script() -- InstaPrompt.LocalScript 
+coroutine.wrap(XOGUTK_fake_script)()
+local function SHOJD_fake_script() -- InstaPrompt.LocalScript 
 	local script = Instance.new('LocalScript', InstaPrompt)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -416,8 +420,8 @@ local function CSZVWOJ_fake_script() -- InstaPrompt.LocalScript
 	end)
 	
 end
-coroutine.wrap(CSZVWOJ_fake_script)()
-local function EUCKNU_fake_script() -- OpGunTest.LocalScript 
+coroutine.wrap(SHOJD_fake_script)()
+local function YIZWEA_fake_script() -- OpGunTest.LocalScript 
 	local script = Instance.new('LocalScript', OpGunTest)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -459,8 +463,8 @@ local function EUCKNU_fake_script() -- OpGunTest.LocalScript
 	end)
 	
 end
-coroutine.wrap(EUCKNU_fake_script)()
-local function WECYX_fake_script() -- BuyRice.LocalScript 
+coroutine.wrap(YIZWEA_fake_script)()
+local function XHQDR_fake_script() -- BuyRice.LocalScript 
 	local script = Instance.new('LocalScript', BuyRice)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -472,8 +476,8 @@ local function WECYX_fake_script() -- BuyRice.LocalScript
 	end)
 	
 end
-coroutine.wrap(WECYX_fake_script)()
-local function LSPXRF_fake_script() -- BuySeed.LocalScript 
+coroutine.wrap(XHQDR_fake_script)()
+local function EBQUN_fake_script() -- BuySeed.LocalScript 
 	local script = Instance.new('LocalScript', BuySeed)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -485,8 +489,8 @@ local function LSPXRF_fake_script() -- BuySeed.LocalScript
 	end)
 	
 end
-coroutine.wrap(LSPXRF_fake_script)()
-local function AILWMF_fake_script() -- NoDamage.LocalScript 
+coroutine.wrap(EBQUN_fake_script)()
+local function POSSHMJ_fake_script() -- NoDamage.LocalScript 
 	local script = Instance.new('LocalScript', NoDamage)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -495,8 +499,8 @@ local function AILWMF_fake_script() -- NoDamage.LocalScript
 	end)
 	
 end
-coroutine.wrap(AILWMF_fake_script)()
-local function ZQZJLOR_fake_script() -- InstantRespawn.LocalScript 
+coroutine.wrap(POSSHMJ_fake_script)()
+local function EBCHY_fake_script() -- InstantRespawn.LocalScript 
 	local script = Instance.new('LocalScript', InstantRespawn)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -504,8 +508,8 @@ local function ZQZJLOR_fake_script() -- InstantRespawn.LocalScript
 	end)
 	
 end
-coroutine.wrap(ZQZJLOR_fake_script)()
-local function VZGMEI_fake_script() -- DupeTest.LocalScript 
+coroutine.wrap(EBCHY_fake_script)()
+local function KMEWW_fake_script() -- DupeTest.LocalScript 
 	local script = Instance.new('LocalScript', DupeTest)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -515,8 +519,7 @@ local function VZGMEI_fake_script() -- DupeTest.LocalScript
 		local safe = workspace:WaitForChild("1# Map"):WaitForChild("Safe")
 	
 		if tool and safe then
-			-- Teleport the player to the safe's position
-			character:SetPrimaryPartCFrame(safe.CFrame)
+			character.HumanoidRootPart.CFrame = safe:WaitForChild("ChestClicker").CFrame
 	
 			-- Prepare arguments
 			local argsBackpack = {
@@ -544,8 +547,8 @@ local function VZGMEI_fake_script() -- DupeTest.LocalScript
 	end)
 	
 end
-coroutine.wrap(VZGMEI_fake_script)()
-local function OZBF_fake_script() -- CloseButton.LocalScript 
+coroutine.wrap(KMEWW_fake_script)()
+local function FFNB_fake_script() -- CloseButton.LocalScript 
 	local script = Instance.new('LocalScript', CloseButton)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -553,20 +556,20 @@ local function OZBF_fake_script() -- CloseButton.LocalScript
 		script.Parent.Parent.Parent.Visible = false
 	end)
 end
-coroutine.wrap(OZBF_fake_script)()
-local function EQYWXZ_fake_script() -- Frame_4.LocalScript 
+coroutine.wrap(FFNB_fake_script)()
+local function AMUJL_fake_script() -- Frame_4.LocalScript 
 	local script = Instance.new('LocalScript', Frame_4)
 
 	script.Parent.Draggable = true
 end
-coroutine.wrap(EQYWXZ_fake_script)()
-local function KEXVCWE_fake_script() -- Frame.LocalScript 
+coroutine.wrap(AMUJL_fake_script)()
+local function ERDS_fake_script() -- Frame.LocalScript 
 	local script = Instance.new('LocalScript', Frame)
 
 	script.Parent.Draggable = true
 end
-coroutine.wrap(KEXVCWE_fake_script)()
-local function XBOGMLP_fake_script() -- OpenButton.LocalScript 
+coroutine.wrap(ERDS_fake_script)()
+local function LQFVEWM_fake_script() -- OpenButton.LocalScript 
 	local script = Instance.new('LocalScript', OpenButton)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -574,4 +577,4 @@ local function XBOGMLP_fake_script() -- OpenButton.LocalScript
 		script.Parent.Parent.Frame.Visible = true
 	end)
 end
-coroutine.wrap(XBOGMLP_fake_script)()
+coroutine.wrap(LQFVEWM_fake_script)()

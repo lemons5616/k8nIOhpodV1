@@ -252,7 +252,7 @@ local function XUNDHRD_fake_script() -- Teleports.LocalScript
 		local newButton = buttonTemplate:Clone() -- Clone the existing button
 		newButton.Name = name .. "Button"
 		newButton.Text = name
-		newButton.Position = UDim2.new(0, 0, 0, #teleportsFolder:GetChildren() * 25) -- Adjust vertical spacing
+		newButton.Position = UDim2.new(0, 0, 0, #teleportsFolder:GetChildren() * 20) -- Adjust vertical spacing
 		newButton.Parent = teleportsFolder
 	
 		-- Connect the button click to teleport function

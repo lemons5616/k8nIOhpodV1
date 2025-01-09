@@ -20,24 +20,27 @@ local Other = Instance.new("Frame")
 local BuyGrape = Instance.new("TextButton")
 local NoBob = Instance.new("TextButton")
 local InstaPrompt = Instance.new("TextButton")
-local TestAmmo = Instance.new("TextButton")
-local TestAmmo2 = Instance.new("TextButton")
+local OpGunTest = Instance.new("TextButton")
 local Frame_4 = Instance.new("Frame")
-local Tha = Instance.new("TextLabel")
+local Jupito = Instance.new("TextLabel")
+local CloseButton = Instance.new("TextButton")
+local OpenButton = Instance.new("TextButton")
 
 --Properties:
 
 JupitoGang.Name = "JupitoGang"
 JupitoGang.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 JupitoGang.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+JupitoGang.ResetOnSpawn = false
 
 Frame.Parent = JupitoGang
 Frame.Active = true
 Frame.BackgroundColor3 = Color3.fromRGB(29, 29, 34)
 Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Frame.BorderSizePixel = 0
-Frame.Position = UDim2.new(0.0200911742, 0, 0.578298151, 0)
+Frame.Position = UDim2.new(-0.000406636682, 0, 0.601766229, 0)
 Frame.Size = UDim2.new(0.346190482, 0, 0.398147821, 0)
+Frame.Visible = false
 
 Frame_2.Parent = Frame
 Frame_2.Active = true
@@ -178,33 +181,19 @@ InstaPrompt.TextScaled = true
 InstaPrompt.TextSize = 14.000
 InstaPrompt.TextWrapped = true
 
-TestAmmo.Name = "TestAmmo"
-TestAmmo.Parent = Other
-TestAmmo.BackgroundColor3 = Color3.fromRGB(35, 35, 44)
-TestAmmo.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TestAmmo.BorderSizePixel = 0
-TestAmmo.Position = UDim2.new(0, 0, 0.283999741, 0)
-TestAmmo.Size = UDim2.new(0.99999994, 0, 0.0948212966, 0)
-TestAmmo.Font = Enum.Font.SourceSans
-TestAmmo.Text = "TestAmmo"
-TestAmmo.TextColor3 = Color3.fromRGB(255, 255, 255)
-TestAmmo.TextScaled = true
-TestAmmo.TextSize = 14.000
-TestAmmo.TextWrapped = true
-
-TestAmmo2.Name = "TestAmmo2"
-TestAmmo2.Parent = Other
-TestAmmo2.BackgroundColor3 = Color3.fromRGB(35, 35, 44)
-TestAmmo2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TestAmmo2.BorderSizePixel = 0
-TestAmmo2.Position = UDim2.new(0, 0, 0.375999749, 0)
-TestAmmo2.Size = UDim2.new(0.99999994, 0, 0.0948212966, 0)
-TestAmmo2.Font = Enum.Font.SourceSans
-TestAmmo2.Text = "TestAmmo2"
-TestAmmo2.TextColor3 = Color3.fromRGB(255, 255, 255)
-TestAmmo2.TextScaled = true
-TestAmmo2.TextSize = 14.000
-TestAmmo2.TextWrapped = true
+OpGunTest.Name = "OpGunTest"
+OpGunTest.Parent = Other
+OpGunTest.BackgroundColor3 = Color3.fromRGB(35, 35, 44)
+OpGunTest.BorderColor3 = Color3.fromRGB(0, 0, 0)
+OpGunTest.BorderSizePixel = 0
+OpGunTest.Position = UDim2.new(0, 0, 0.283999741, 0)
+OpGunTest.Size = UDim2.new(0.99999994, 0, 0.0948212966, 0)
+OpGunTest.Font = Enum.Font.SourceSans
+OpGunTest.Text = "TestGun"
+OpGunTest.TextColor3 = Color3.fromRGB(255, 255, 255)
+OpGunTest.TextScaled = true
+OpGunTest.TextSize = 14.000
+OpGunTest.TextWrapped = true
 
 Frame_4.Parent = Frame
 Frame_4.BackgroundColor3 = Color3.fromRGB(38, 40, 43)
@@ -213,25 +202,53 @@ Frame_4.BorderSizePixel = 0
 Frame_4.Position = UDim2.new(6.45806324e-08, 0, -9.98032093e-08, 0)
 Frame_4.Size = UDim2.new(1.00000012, 0, 0.179681003, 0)
 
-Tha.Name = "Tha"
-Tha.Parent = Frame_4
-Tha.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Tha.BackgroundTransparency = 1.000
-Tha.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Tha.BorderSizePixel = 0
-Tha.Position = UDim2.new(0.0200297143, 0, 0.219166353, 0)
-Tha.Size = UDim2.new(0.433336616, 0, 0.541722715, 0)
-Tha.Font = Enum.Font.Roboto
-Tha.Text = "JupitoGang"
-Tha.TextColor3 = Color3.fromRGB(255, 255, 255)
-Tha.TextScaled = true
-Tha.TextSize = 14.000
-Tha.TextWrapped = true
-Tha.TextXAlignment = Enum.TextXAlignment.Left
+Jupito.Name = "Jupito"
+Jupito.Parent = Frame_4
+Jupito.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Jupito.BackgroundTransparency = 1.000
+Jupito.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Jupito.BorderSizePixel = 0
+Jupito.Position = UDim2.new(0.0200297143, 0, 0.219166353, 0)
+Jupito.Size = UDim2.new(0.433336616, 0, 0.541722715, 0)
+Jupito.Font = Enum.Font.Roboto
+Jupito.Text = "JupitoGang"
+Jupito.TextColor3 = Color3.fromRGB(255, 255, 255)
+Jupito.TextScaled = true
+Jupito.TextSize = 14.000
+Jupito.TextWrapped = true
+Jupito.TextXAlignment = Enum.TextXAlignment.Left
+
+CloseButton.Name = "CloseButton"
+CloseButton.Parent = Frame_4
+CloseButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+CloseButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CloseButton.BorderSizePixel = 0
+CloseButton.Position = UDim2.new(0.883982539, 0, 0.0182246063, 0)
+CloseButton.Size = UDim2.new(0.114122197, 0, 0.911230326, 0)
+CloseButton.Font = Enum.Font.Ubuntu
+CloseButton.Text = "X"
+CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+CloseButton.TextScaled = true
+CloseButton.TextSize = 14.000
+CloseButton.TextWrapped = true
+
+OpenButton.Name = "OpenButton"
+OpenButton.Parent = JupitoGang
+OpenButton.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+OpenButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+OpenButton.BorderSizePixel = 0
+OpenButton.Position = UDim2.new(0, 0, 0.942406058, 0)
+OpenButton.Size = UDim2.new(0.131771594, 0, 0.0573663637, 0)
+OpenButton.Font = Enum.Font.SourceSans
+OpenButton.Text = "Open Jupito"
+OpenButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+OpenButton.TextScaled = true
+OpenButton.TextSize = 14.000
+OpenButton.TextWrapped = true
 
 -- Scripts:
 
-local function RAAKU_fake_script() -- Teleports.LocalScript 
+local function HUXBQN_fake_script() -- Teleports.LocalScript 
 	local script = Instance.new('LocalScript', Teleports)
 
 	-- Parent the script under the 'Teleports' frame or adjust references accordingly
@@ -282,8 +299,8 @@ local function RAAKU_fake_script() -- Teleports.LocalScript
 	buttonTemplate:Destroy()
 	
 end
-coroutine.wrap(RAAKU_fake_script)()
-local function BRCS_fake_script() -- BuyGrape.LocalScript 
+coroutine.wrap(HUXBQN_fake_script)()
+local function YGCGZV_fake_script() -- BuyGrape.LocalScript 
 	local script = Instance.new('LocalScript', BuyGrape)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -295,8 +312,8 @@ local function BRCS_fake_script() -- BuyGrape.LocalScript
 	end)
 	
 end
-coroutine.wrap(BRCS_fake_script)()
-local function LKHVHS_fake_script() -- NoBob.LocalScript 
+coroutine.wrap(YGCGZV_fake_script)()
+local function FIFVGN_fake_script() -- NoBob.LocalScript 
 	local script = Instance.new('LocalScript', NoBob)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -304,8 +321,8 @@ local function LKHVHS_fake_script() -- NoBob.LocalScript
 	end)
 	
 end
-coroutine.wrap(LKHVHS_fake_script)()
-local function ECVLUF_fake_script() -- InstaPrompt.LocalScript 
+coroutine.wrap(FIFVGN_fake_script)()
+local function BCDJGYR_fake_script() -- InstaPrompt.LocalScript 
 	local script = Instance.new('LocalScript', InstaPrompt)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -324,48 +341,87 @@ local function ECVLUF_fake_script() -- InstaPrompt.LocalScript
 	end)
 	
 end
-coroutine.wrap(ECVLUF_fake_script)()
-local function MVJW_fake_script() -- TestAmmo.LocalScript 
-	local script = Instance.new('LocalScript', TestAmmo)
+coroutine.wrap(BCDJGYR_fake_script)()
+local function SUHDNH_fake_script() -- OpGunTest.LocalScript 
+	local script = Instance.new('LocalScript', OpGunTest)
 
 	script.Parent.MouseButton1Click:Connect(function()
-		while true do
-			function getNil(name,class) for _,v in next, getnilinstances()do if v.ClassName==class and v.Name==name then return v;end end end
+		-- Script to find LocalPlayer's 'Setting' ModuleScript in Workspace
 	
-			local args = {
-				[1] = 9999,
-				[2] = 9999
-			}
+		-- Define a function to find a module script by name in a given model
+		local function findModuleScriptInCharacter(character, moduleName)
+			for _, descendant in ipairs(character:GetDescendants()) do
+				if descendant:IsA("ModuleScript") and descendant.Name == moduleName then
+					return descendant
+				end
+			end
+			return nil  -- Return nil if not found
+		end
 	
-			getNil("ChangeMagAndAmmo", "RemoteEvent"):FireServer(unpack(args))
-			wait(0.01)
+		-- Main execution
+		local Players = game:GetService("Players")
+		local Workspace = game:GetService("Workspace")
+	
+		local localPlayer = Players.LocalPlayer  -- Get the local player
+		if localPlayer then
+			local character = localPlayer.Character or localPlayer.CharacterAdded:Wait()  -- Wait if character not yet loaded
+			local settingModule = findModuleScriptInCharacter(character, "Setting")
+			local gun = settingModule  -- Assigning the found moduleScript to 'gun'
+	
+			if settingModule then
+				local settings = require(gun)  -- Require the module script
+				settings.LimitedAmmoEnabled = false
+				settings.Knockback = math.huge
+				settings.FlamingBullet = true
+				settings.ReloadTime = 0;
+				settings.SpreadX = 5
+				settings.SpreadY = 5
+				settings.BaseDamage = math.huge
+				settings.AmmoPerMag = math.huge
+				settings.FireRate = 0
+				settings.Range = math.huge
+				settings.CriticalDamageEnabled = true
+				settings.WalkSpeedRedutionEnabled = false
+				settings.Ammo = math.huge
+				settings.MaxAmmo = math.huge
+				print("Found 'Setting' ModuleScript:", settingModule:GetFullName())
+			else
+				warn("'Setting' ModuleScript not found in the character.")
+			end
+		else
+			warn("LocalPlayer not found.")
 		end
 	end)
 	
 end
-coroutine.wrap(MVJW_fake_script)()
-local function YIYAUL_fake_script() -- TestAmmo2.LocalScript 
-	local script = Instance.new('LocalScript', TestAmmo2)
+coroutine.wrap(SUHDNH_fake_script)()
+local function AXNT_fake_script() -- CloseButton.LocalScript 
+	local script = Instance.new('LocalScript', CloseButton)
 
 	script.Parent.MouseButton1Click:Connect(function()
-		while true do
-			function getNil(name,class) for _,v in next, getnilinstances()do if v.ClassName==class and v.Name==name then return v;end end end
-	
-			local args = {
-				[1] = 9999,
-				[2] = 9999
-			}
-	
-			getNil("ChangeMagAndAmmo", "RemoteEvent").Destroy()
-			wait(0.1)
-		end
+		script.Parent.Parent.Parent.Parent.OpenButton.Visible = true
+		script.Parent.Parent.Parent.Visible = false
 	end)
-	
 end
-coroutine.wrap(YIYAUL_fake_script)()
-local function OVXOVT_fake_script() -- Frame.LocalScript 
+coroutine.wrap(AXNT_fake_script)()
+local function PFOQO_fake_script() -- Frame_4.LocalScript 
+	local script = Instance.new('LocalScript', Frame_4)
+
+	script.Parent.Draggable = true
+end
+coroutine.wrap(PFOQO_fake_script)()
+local function JFBDDZ_fake_script() -- Frame.LocalScript 
 	local script = Instance.new('LocalScript', Frame)
 
 	script.Parent.Draggable = true
 end
-coroutine.wrap(OVXOVT_fake_script)()
+coroutine.wrap(JFBDDZ_fake_script)()
+local function OEPS_fake_script() -- OpenButton.LocalScript 
+	local script = Instance.new('LocalScript', OpenButton)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Visible = false
+		script.Parent.Parent.Frame.Visible = true
+	end)
+end
+coroutine.wrap(OEPS_fake_script)()

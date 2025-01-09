@@ -231,7 +231,7 @@ Tha.TextXAlignment = Enum.TextXAlignment.Left
 
 -- Scripts:
 
-local function XUNDHRD_fake_script() -- Teleports.LocalScript 
+local function RAAKU_fake_script() -- Teleports.LocalScript 
 	local script = Instance.new('LocalScript', Teleports)
 
 	-- Parent the script under the 'Teleports' frame or adjust references accordingly
@@ -282,8 +282,8 @@ local function XUNDHRD_fake_script() -- Teleports.LocalScript
 	buttonTemplate:Destroy()
 	
 end
-coroutine.wrap(XUNDHRD_fake_script)()
-local function LECZY_fake_script() -- BuyGrape.LocalScript 
+coroutine.wrap(RAAKU_fake_script)()
+local function BRCS_fake_script() -- BuyGrape.LocalScript 
 	local script = Instance.new('LocalScript', BuyGrape)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -295,8 +295,8 @@ local function LECZY_fake_script() -- BuyGrape.LocalScript
 	end)
 	
 end
-coroutine.wrap(LECZY_fake_script)()
-local function JPRDEEY_fake_script() -- NoBob.LocalScript 
+coroutine.wrap(BRCS_fake_script)()
+local function LKHVHS_fake_script() -- NoBob.LocalScript 
 	local script = Instance.new('LocalScript', NoBob)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -304,8 +304,8 @@ local function JPRDEEY_fake_script() -- NoBob.LocalScript
 	end)
 	
 end
-coroutine.wrap(JPRDEEY_fake_script)()
-local function CVGB_fake_script() -- InstaPrompt.LocalScript 
+coroutine.wrap(LKHVHS_fake_script)()
+local function ECVLUF_fake_script() -- InstaPrompt.LocalScript 
 	local script = Instance.new('LocalScript', InstaPrompt)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -324,8 +324,8 @@ local function CVGB_fake_script() -- InstaPrompt.LocalScript
 	end)
 	
 end
-coroutine.wrap(CVGB_fake_script)()
-local function HYISQIM_fake_script() -- TestAmmo.LocalScript 
+coroutine.wrap(ECVLUF_fake_script)()
+local function MVJW_fake_script() -- TestAmmo.LocalScript 
 	local script = Instance.new('LocalScript', TestAmmo)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -343,26 +343,29 @@ local function HYISQIM_fake_script() -- TestAmmo.LocalScript
 	end)
 	
 end
-coroutine.wrap(HYISQIM_fake_script)()
-local function KFRFFZG_fake_script() -- TestAmmo2.LocalScript 
+coroutine.wrap(MVJW_fake_script)()
+local function YIYAUL_fake_script() -- TestAmmo2.LocalScript 
 	local script = Instance.new('LocalScript', TestAmmo2)
 
 	script.Parent.MouseButton1Click:Connect(function()
-		function getNil(name,class) for _,v in next, getnilinstances()do if v.ClassName==class and v.Name==name then return v;end end end
+		while true do
+			function getNil(name,class) for _,v in next, getnilinstances()do if v.ClassName==class and v.Name==name then return v;end end end
 	
-		local args = {
-			[1] = 9999,
-			[2] = 9999
-		}
+			local args = {
+				[1] = 9999,
+				[2] = 9999
+			}
 	
-		getNil("ChangeMagAndAmmo", "RemoteEvent").Destroy()
+			getNil("ChangeMagAndAmmo", "RemoteEvent").Destroy()
+			wait(0.1)
+		end
 	end)
 	
 end
-coroutine.wrap(KFRFFZG_fake_script)()
-local function HSHYQAM_fake_script() -- Frame.LocalScript 
+coroutine.wrap(YIYAUL_fake_script)()
+local function OVXOVT_fake_script() -- Frame.LocalScript 
 	local script = Instance.new('LocalScript', Frame)
 
 	script.Parent.Draggable = true
 end
-coroutine.wrap(HSHYQAM_fake_script)()
+coroutine.wrap(OVXOVT_fake_script)()

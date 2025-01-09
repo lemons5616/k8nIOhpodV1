@@ -1,1 +1,210 @@
-1.0
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local JupitoGang = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local Frame_2 = Instance.new("Frame")
+local Categorys = Instance.new("Folder")
+local Main = Instance.new("TextLabel")
+local Main_Category = Instance.new("TextButton")
+local CategoryPage = Instance.new("Folder")
+local Main_2 = Instance.new("Folder")
+local Frame_3 = Instance.new("Frame")
+local Teleports = Instance.new("Frame")
+local TeleportsLabel = Instance.new("TextLabel")
+local Teleports_2 = Instance.new("Folder")
+local Button = Instance.new("TextButton")
+local Other = Instance.new("Frame")
+local Frame_4 = Instance.new("Frame")
+local Tha = Instance.new("TextLabel")
+
+--Properties:
+
+JupitoGang.Name = "JupitoGang"
+JupitoGang.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+JupitoGang.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = JupitoGang
+Frame.Active = true
+Frame.BackgroundColor3 = Color3.fromRGB(29, 29, 34)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.0200911742, 0, 0.578298151, 0)
+Frame.Size = UDim2.new(0.346190482, 0, 0.398147821, 0)
+
+Frame_2.Parent = Frame
+Frame_2.Active = true
+Frame_2.BackgroundColor3 = Color3.fromRGB(38, 40, 43)
+Frame_2.BorderColor3 = Color3.fromRGB(62, 62, 62)
+Frame_2.BorderSizePixel = 0
+Frame_2.Position = UDim2.new(-0.00107064995, 0, 0.179680899, 0)
+Frame_2.Size = UDim2.new(0.237826571, 0, 0.819313824, 0)
+
+Categorys.Name = "Categorys"
+Categorys.Parent = Frame_2
+
+Main.Name = "Main"
+Main.Parent = Categorys
+Main.BackgroundColor3 = Color3.fromRGB(30, 32, 34)
+Main.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Main.BorderSizePixel = 0
+Main.Position = UDim2.new(3.39431345e-08, 0, 0, 0)
+Main.Size = UDim2.new(0.98767674, 0, 0.112853631, 0)
+Main.Font = Enum.Font.TitilliumWeb
+Main.Text = "Categorys"
+Main.TextColor3 = Color3.fromRGB(255, 255, 255)
+Main.TextScaled = true
+Main.TextSize = 14.000
+Main.TextWrapped = true
+
+Main_Category.Name = "Main_Category"
+Main_Category.Parent = Categorys
+Main_Category.BackgroundColor3 = Color3.fromRGB(26, 27, 29)
+Main_Category.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Main_Category.BorderSizePixel = 0
+Main_Category.Position = UDim2.new(0.00450174185, 0, 0.142947927, 0)
+Main_Category.Size = UDim2.new(0.98767674, 0, 0.0957977697, 0)
+Main_Category.Font = Enum.Font.SourceSans
+Main_Category.Text = "Main"
+Main_Category.TextColor3 = Color3.fromRGB(255, 255, 255)
+Main_Category.TextScaled = true
+Main_Category.TextSize = 14.000
+Main_Category.TextWrapped = true
+
+CategoryPage.Name = "CategoryPage"
+CategoryPage.Parent = Frame_2
+
+Main_2.Name = "Main"
+Main_2.Parent = CategoryPage
+
+Frame_3.Parent = Main_2
+Frame_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame_3.BackgroundTransparency = 1.000
+Frame_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame_3.BorderSizePixel = 0
+Frame_3.Position = UDim2.new(0.995845139, 0, 0, 0)
+Frame_3.Size = UDim2.new(3.20982242, 0, 0.995197713, 0)
+
+Teleports.Name = "Teleports"
+Teleports.Parent = Frame_3
+Teleports.BackgroundColor3 = Color3.fromRGB(31, 31, 36)
+Teleports.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Teleports.BorderSizePixel = 0
+Teleports.Size = UDim2.new(0.534626067, 0, 1.00401604, 0)
+
+TeleportsLabel.Name = "TeleportsLabel"
+TeleportsLabel.Parent = Teleports
+TeleportsLabel.BackgroundColor3 = Color3.fromRGB(25, 25, 29)
+TeleportsLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TeleportsLabel.BorderSizePixel = 0
+TeleportsLabel.Size = UDim2.new(1, 0, 0.112000003, 0)
+TeleportsLabel.Font = Enum.Font.SourceSans
+TeleportsLabel.Text = "Teleports"
+TeleportsLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TeleportsLabel.TextScaled = true
+TeleportsLabel.TextSize = 14.000
+TeleportsLabel.TextWrapped = true
+
+Teleports_2.Name = "Teleports"
+Teleports_2.Parent = Teleports
+
+Button.Name = "Button"
+Button.Parent = Teleports_2
+Button.BackgroundColor3 = Color3.fromRGB(35, 35, 44)
+Button.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Button.BorderSizePixel = 0
+Button.Position = UDim2.new(0, 0, 0.140000001, 0)
+Button.Size = UDim2.new(0.99999994, 0, 0.0735979006, 0)
+Button.Font = Enum.Font.SourceSans
+Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+Button.TextScaled = true
+Button.TextSize = 14.000
+Button.TextWrapped = true
+
+Other.Name = "Other"
+Other.Parent = Frame_3
+Other.BackgroundColor3 = Color3.fromRGB(31, 31, 36)
+Other.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Other.BorderSizePixel = 0
+Other.Position = UDim2.new(0.580612898, 0, 0, 0)
+Other.Size = UDim2.new(0.418282539, 0, 1.00401604, 0)
+
+Frame_4.Parent = Frame
+Frame_4.BackgroundColor3 = Color3.fromRGB(38, 40, 43)
+Frame_4.BorderColor3 = Color3.fromRGB(62, 62, 62)
+Frame_4.BorderSizePixel = 0
+Frame_4.Position = UDim2.new(6.45806324e-08, 0, -9.98032093e-08, 0)
+Frame_4.Size = UDim2.new(1.00000012, 0, 0.179681003, 0)
+
+Tha.Name = "Tha"
+Tha.Parent = Frame_4
+Tha.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Tha.BackgroundTransparency = 1.000
+Tha.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Tha.BorderSizePixel = 0
+Tha.Position = UDim2.new(0.0200297143, 0, 0.219166353, 0)
+Tha.Size = UDim2.new(0.433336616, 0, 0.541722715, 0)
+Tha.Font = Enum.Font.Roboto
+Tha.Text = "JupitoGang"
+Tha.TextColor3 = Color3.fromRGB(255, 255, 255)
+Tha.TextScaled = true
+Tha.TextSize = 14.000
+Tha.TextWrapped = true
+Tha.TextXAlignment = Enum.TextXAlignment.Left
+
+-- Scripts:
+
+local function JQRADOA_fake_script() -- Teleports.LocalScript 
+	local script = Instance.new('LocalScript', Teleports)
+
+	-- Parent the script under the 'Teleports' frame or adjust references accordingly
+	local teleportsFolder = script.Parent.Teleports
+	local buttonTemplate = teleportsFolder.Button -- The template button
+	
+	-- Function to teleport the player to a specific position and make them look at a target
+	local function teleportPlayer(destination, lookAt)
+		local player = game.Players.LocalPlayer
+		if player and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+			-- Teleport the player
+			player.Character.HumanoidRootPart.CFrame = CFrame.new(destination, lookAt)
+		end
+	end
+	
+	-- Function to add a teleport button by copying the template
+	local function addButton(name, destination, lookAt)
+		local newButton = buttonTemplate:Clone() -- Clone the existing button
+		newButton.Name = name .. "Button"
+		newButton.Text = name
+		newButton.Position = UDim2.new(0, 0, 0, #teleportsFolder:GetChildren() * 20) -- Adjust vertical spacing
+		newButton.Parent = teleportsFolder
+	
+		-- Connect the button click to teleport function
+		newButton.MouseButton1Click:Connect(function()
+			teleportPlayer(destination, lookAt)
+		end)
+	end
+	
+	-- Locations with lookAt values
+	local locations = {
+		{name = "Guns Shop 1", position = Vector3.new(-1006.58356, 254.004608, -817.199097), lookAt = Vector3.new(-0.0523939244, 0.116114356, -0.991852999)},
+		{name = "Guns Shop 2", position = Vector3.new(-129.877258, 282.965973, -796.901062), lookAt = Vector3.new(-0.072124593, 0.00113434147, -0.997394979)},
+		{name = "Pasillo Hotel", position = Vector3.new(-24.5520306, 416.43338, -454.355347), lookAt = Vector3.new(1, 0, 0)},
+		{name = "Lavanderia", position = Vector3.new(-982.799316, 252.941132, -682.534668), lookAt = Vector3.new(-0.469494909, 0.0376266912, -0.882133007)},
+		{name = "Vendedor Arroz", position = Vector3.new(81065.0703, 133132.984, 167.565689), lookAt = Vector3.new(-0.31119433, 1.00292139e-08, -0.950346291)},
+		{name = "Exotic Dealer", position = Vector3.new(-1521.92236, 273.35968, -988.202942), lookAt = Vector3.new(1, 0, 0)},
+		{name = "Bank", position = Vector3.new(-130.178146, 283.632904, -1200.91504), lookAt = Vector3.new(-0.0312261377, 6.22671266e-08, -0.999512374)},
+		{name = "W33d Seller", position = Vector3.new(-630.154541, 252.798019, -730.857178), lookAt = Vector3.new(0, 0, 1)},
+	}
+	
+	-- Add teleport buttons for all locations
+	for _, location in ipairs(locations) do
+		addButton(location.name, location.position, location.lookAt)
+	end
+	
+	-- Delete the template button after initializing
+	buttonTemplate:Destroy()
+	
+end
+coroutine.wrap(JQRADOA_fake_script)()

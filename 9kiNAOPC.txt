@@ -673,11 +673,11 @@ local function BWVO_fake_script() -- FastGun.LocalScript
 	
 			if settingModule then
 				local settings = require(gun)  -- Require the module script
-				settings.FireRate = 1 / 1000
+				settings.FireRate = 1 / 200
 				settings.Auto = true
 				settings.BurstFireEnabled = true
 				settings.BulletPerBurst = 1
-				settings.BurstRate = 1 / 1000
+				settings.BurstRate = 1 / 175
 				print("Test: ".. settings.Ammo)
 			else
 				warn("'Setting' ModuleScript not found in the character.")

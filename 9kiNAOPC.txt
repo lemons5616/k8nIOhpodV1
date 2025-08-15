@@ -757,7 +757,7 @@ local function THPU_fake_script() -- GunInstaKill.LocalScript
 	
 			if settingModule then
 				local settings = require(gun)  -- Require the module script
-				settings.BaseDamage = 100
+				settings.BaseDamage = 95
 			else
 				warn("'Setting' ModuleScript not found in the character.")
 			end

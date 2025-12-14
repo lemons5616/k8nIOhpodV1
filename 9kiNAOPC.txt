@@ -1,109 +1,111 @@
--- Borra GUI anterior si existe
+-- Simple Infinite Ammo & Damage GUI
 local player = game.Players.LocalPlayer
-if player.PlayerGui:FindFirstChild("SimpleCombatGui") then
-	player.PlayerGui.SimpleCombatGui:Destroy()
+
+-- eliminar gui previa
+if player.PlayerGui:FindFirstChild("SCG") then
+	player.PlayerGui.SCG:Destroy()
 end
 
 -- GUI
-local gui = Instance.new("ScreenGui", player.PlayerGui)
-gui.Name = "SimpleCombatGui"
+local gui = Instance.new("ScreenGui")
+gui.Name = "SCG"
 gui.ResetOnSpawn = false
+gui.Parent = player.PlayerGui
 
-local frame = Instance.new("Frame", gui)
-frame.Size = UDim2.new(0, 300, 0, 200)
-frame.Position = UDim2.new(0.05, 0, 0.5, 0)
-frame.BackgroundColor3 = Color3.fromRGB(35,35,40)
+local frame = Instance.new("Frame")
+frame.Parent = gui
+frame.Size = UDim2.new(0, 280, 0, 180)
+frame.Position = UDim2.new(0.5, -140, 0.5, -90) -- CENTRADO
+frame.BackgroundColor3 = Color3.fromRGB(40,40,45)
 frame.Active = true
-frame.Draggable = true
+frame.Draggable = true -- ARRASTRABLE
 
-local title = Instance.new("TextLabel", frame)
+-- título
+local title = Instance.new("TextLabel")
+title.Parent = frame
 title.Size = UDim2.new(1,0,0,30)
-title.Text = "Combat Menu"
+title.Text = "Combat Boost"
 title.TextColor3 = Color3.new(1,1,1)
 title.BackgroundTransparency = 1
 title.TextScaled = true
 
--- INF AMMO BUTTON
-local infAmmoBtn = Instance.new("TextButton", frame)
-infAmmoBtn.Position = UDim2.new(0.05,0,0.25,0)
-infAmmoBtn.Size = UDim2.new(0.9,0,0,35)
-infAmmoBtn.Text = "Activate Infinite Ammo"
-infAmmoBtn.TextScaled = true
-infAmmoBtn.BackgroundColor3 = Color3.fromRGB(50,50,60)
-infAmmoBtn.TextColor3 = Color3.new(1,1,1)
+-- botón inf ammo
+local infBtn = Instance.new("TextButton")
+infBtn.Parent = frame
+infBtn.Position = UDim2.new(0.05,0,0.25,0)
+infBtn.Size = UDim2.new(0.9,0,0,35)
+infBtn.Text = "Enable Inf Ammo"
+infBtn.TextScaled = true
+infBtn.BackgroundColor3 = Color3.fromRGB(55,55,65)
+infBtn.TextColor3 = Color3.new(1,1,1)
 
--- DAMAGE INPUT
-local dmgBox = Instance.new("TextBox", frame)
+-- textbox daño
+local dmgBox = Instance.new("TextBox")
+dmgBox.Parent = frame
 dmgBox.Position = UDim2.new(0.05,0,0.5,0)
 dmgBox.Size = UDim2.new(0.9,0,0,30)
-dmgBox.PlaceholderText = "Damage (example: 100)"
+dmgBox.PlaceholderText = "Damage value"
 dmgBox.Text = ""
 dmgBox.TextScaled = true
-dmgBox.BackgroundColor3 = Color3.fromRGB(45,45,55)
+dmgBox.BackgroundColor3 = Color3.fromRGB(50,50,60)
 dmgBox.TextColor3 = Color3.new(1,1,1)
 
-local dmgBtn = Instance.new("TextButton", frame)
+-- botón daño
+local dmgBtn = Instance.new("TextButton")
+dmgBtn.Parent = frame
 dmgBtn.Position = UDim2.new(0.05,0,0.7,0)
 dmgBtn.Size = UDim2.new(0.9,0,0,35)
 dmgBtn.Text = "Apply Damage"
 dmgBtn.TextScaled = true
-dmgBtn.BackgroundColor3 = Color3.fromRGB(50,50,60)
+dmgBtn.BackgroundColor3 = Color3.fromRGB(55,55,65)
 dmgBtn.TextColor3 = Color3.new(1,1,1)
 
 ------------------------------------------------
--- FUNCTIONS
+-- FUNCIONES
 ------------------------------------------------
 
-local function getSettingModule(moduleName)
+local function getGunSettings()
 	local char = player.Character or player.CharacterAdded:Wait()
-	for _,v in pairs(char:GetDescendants()) do
-		if v:IsA("ModuleScript") and v.Name == moduleName then
-			return v
+	for _,v in ipairs(char:GetDescendants()) do
+		if v:IsA("ModuleScript") and v.Name == "Setting" then
+			return require(v)
 		end
 	end
 end
 
 ------------------------------------------------
--- INF AMMO LOGIC
+-- INF AMMO (sin 999)
 ------------------------------------------------
 
-infAmmoBtn.MouseButton1Click:Connect(function()
-	local settingModule = getSettingModule("Setting")
-	if not settingModule then return end
+infBtn.MouseButton1Click:Connect(function()
+	local settings = getGunSettings()
+	if not settings then return end
 
-	local gunSettings = require(settingModule)
-	local originalAmmo = gunSettings.Ammo
-	local originalMax = gunSettings.MaxAmmo
+	local originalAmmo = settings.Ammo
 
-	-- Mantiene el ammo siempre al valor original
 	task.spawn(function()
 		while true do
 			task.wait(0.05)
-			if gunSettings.Ammo < originalAmmo then
-				gunSettings.Ammo = originalAmmo
-			end
-			if gunSettings.MaxAmmo ~= originalMax then
-				gunSettings.MaxAmmo = originalMax
+			if settings.Ammo < originalAmmo then
+				settings.Ammo = originalAmmo
 			end
 		end
 	end)
 
-	infAmmoBtn.Text = "Infinite Ammo ON"
+	infBtn.Text = "Inf Ammo ON"
 end)
 
 ------------------------------------------------
--- INF DAMAGE LOGIC
+-- INF DAMAGE
 ------------------------------------------------
 
 dmgBtn.MouseButton1Click:Connect(function()
 	local dmg = tonumber(dmgBox.Text)
 	if not dmg then return end
 
-	local settingModule = getSettingModule("Setting")
-	if not settingModule then return end
-
-	local gunSettings = require(settingModule)
-	gunSettings.BaseDamage = dmg
-
-	dmgBtn.Text = "Damage Set: "..dmg
+	local settings = getGunSettings()
+	if settings then
+		settings.BaseDamage = dmg
+		dmgBtn.Text = "Damage: "..dmg
+	end
 end)

@@ -1,840 +1,109 @@
--- Gui to Lua
--- Version: 3.2
-
--- Instances:
-
-if (game.Players.LocalPlayer.PlayerGui:FindFirstChild("JupitoGang")) then
-	game.Players.LocalPlayer.PlayerGui:FindFirstChild("JupitoGang"):Destroy()
+-- Borra GUI anterior si existe
+local player = game.Players.LocalPlayer
+if player.PlayerGui:FindFirstChild("SimpleCombatGui") then
+	player.PlayerGui.SimpleCombatGui:Destroy()
 end
 
-local JupitoGang = Instance.new("ScreenGui")
-local Frame = Instance.new("Frame")
-local Frame_2 = Instance.new("Frame")
-local Categorys = Instance.new("Folder")
-local Main = Instance.new("TextLabel")
-local Main_Category = Instance.new("TextButton")
-local CategoryPage = Instance.new("Folder")
-local Main_2 = Instance.new("Folder")
-local Frame_3 = Instance.new("Frame")
-local Teleports = Instance.new("Frame")
-local TeleportsLabel = Instance.new("TextLabel")
-local Teleports_2 = Instance.new("Folder")
-local Button = Instance.new("TextButton")
-local Other = Instance.new("Frame")
-local BuyGrape = Instance.new("TextButton")
-local NoBob = Instance.new("TextButton")
-local InstaPrompt = Instance.new("TextButton")
-local InfAmmo = Instance.new("TextButton")
-local BuyRice = Instance.new("TextButton")
-local BuySeed = Instance.new("TextButton")
-local NoDamage = Instance.new("TextButton")
-local InstantRespawn = Instance.new("TextButton")
-local DupeTest = Instance.new("TextButton")
-local NoHunger = Instance.new("TextButton")
-local FastGun = Instance.new("TextButton")
-local OnePunch = Instance.new("TextButton")
-local GunInstaKill = Instance.new("TextButton")
-local NoSafe = Instance.new("TextButton")
-local Frame_4 = Instance.new("Frame")
-local Jupito = Instance.new("TextLabel")
-local CloseButton = Instance.new("TextButton")
-local OpenButton = Instance.new("TextButton")
+-- GUI
+local gui = Instance.new("ScreenGui", player.PlayerGui)
+gui.Name = "SimpleCombatGui"
+gui.ResetOnSpawn = false
 
---Properties:
+local frame = Instance.new("Frame", gui)
+frame.Size = UDim2.new(0, 300, 0, 200)
+frame.Position = UDim2.new(0.05, 0, 0.5, 0)
+frame.BackgroundColor3 = Color3.fromRGB(35,35,40)
+frame.Active = true
+frame.Draggable = true
 
-JupitoGang.Name = "JupitoGang"
-JupitoGang.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-JupitoGang.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-JupitoGang.ResetOnSpawn = false
+local title = Instance.new("TextLabel", frame)
+title.Size = UDim2.new(1,0,0,30)
+title.Text = "Combat Menu"
+title.TextColor3 = Color3.new(1,1,1)
+title.BackgroundTransparency = 1
+title.TextScaled = true
 
-Frame.Parent = JupitoGang
-Frame.Active = true
-Frame.BackgroundColor3 = Color3.fromRGB(29, 29, 34)
-Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Frame.BorderSizePixel = 0
-Frame.Position = UDim2.new(-0.000406647858, 0, 0.601766229, 0)
-Frame.Size = UDim2.new(0.377963513, 0, 0.398147851, 0)
-Frame.Visible = false
+-- INF AMMO BUTTON
+local infAmmoBtn = Instance.new("TextButton", frame)
+infAmmoBtn.Position = UDim2.new(0.05,0,0.25,0)
+infAmmoBtn.Size = UDim2.new(0.9,0,0,35)
+infAmmoBtn.Text = "Activate Infinite Ammo"
+infAmmoBtn.TextScaled = true
+infAmmoBtn.BackgroundColor3 = Color3.fromRGB(50,50,60)
+infAmmoBtn.TextColor3 = Color3.new(1,1,1)
 
-Frame_2.Parent = Frame
-Frame_2.Active = true
-Frame_2.BackgroundColor3 = Color3.fromRGB(38, 40, 43)
-Frame_2.BorderColor3 = Color3.fromRGB(62, 62, 62)
-Frame_2.BorderSizePixel = 0
-Frame_2.Position = UDim2.new(-0.00107064995, 0, 0.179680899, 0)
-Frame_2.Size = UDim2.new(0.237826571, 0, 0.819313824, 0)
+-- DAMAGE INPUT
+local dmgBox = Instance.new("TextBox", frame)
+dmgBox.Position = UDim2.new(0.05,0,0.5,0)
+dmgBox.Size = UDim2.new(0.9,0,0,30)
+dmgBox.PlaceholderText = "Damage (example: 100)"
+dmgBox.Text = ""
+dmgBox.TextScaled = true
+dmgBox.BackgroundColor3 = Color3.fromRGB(45,45,55)
+dmgBox.TextColor3 = Color3.new(1,1,1)
 
-Categorys.Name = "Categorys"
-Categorys.Parent = Frame_2
+local dmgBtn = Instance.new("TextButton", frame)
+dmgBtn.Position = UDim2.new(0.05,0,0.7,0)
+dmgBtn.Size = UDim2.new(0.9,0,0,35)
+dmgBtn.Text = "Apply Damage"
+dmgBtn.TextScaled = true
+dmgBtn.BackgroundColor3 = Color3.fromRGB(50,50,60)
+dmgBtn.TextColor3 = Color3.new(1,1,1)
 
-Main.Name = "Main"
-Main.Parent = Categorys
-Main.BackgroundColor3 = Color3.fromRGB(30, 32, 34)
-Main.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Main.BorderSizePixel = 0
-Main.Position = UDim2.new(3.39431345e-08, 0, 0, 0)
-Main.Size = UDim2.new(0.98767674, 0, 0.112853631, 0)
-Main.Font = Enum.Font.TitilliumWeb
-Main.Text = "Categorys"
-Main.TextColor3 = Color3.fromRGB(255, 255, 255)
-Main.TextScaled = true
-Main.TextSize = 14.000
-Main.TextWrapped = true
+------------------------------------------------
+-- FUNCTIONS
+------------------------------------------------
 
-Main_Category.Name = "Main_Category"
-Main_Category.Parent = Categorys
-Main_Category.BackgroundColor3 = Color3.fromRGB(26, 27, 29)
-Main_Category.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Main_Category.BorderSizePixel = 0
-Main_Category.Position = UDim2.new(0.00450174185, 0, 0.142947927, 0)
-Main_Category.Size = UDim2.new(0.98767674, 0, 0.0957977697, 0)
-Main_Category.Font = Enum.Font.SourceSans
-Main_Category.Text = "Main"
-Main_Category.TextColor3 = Color3.fromRGB(255, 255, 255)
-Main_Category.TextScaled = true
-Main_Category.TextSize = 14.000
-Main_Category.TextWrapped = true
-
-CategoryPage.Name = "CategoryPage"
-CategoryPage.Parent = Frame_2
-
-Main_2.Name = "Main"
-Main_2.Parent = CategoryPage
-
-Frame_3.Parent = Main_2
-Frame_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Frame_3.BackgroundTransparency = 1.000
-Frame_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Frame_3.BorderSizePixel = 0
-Frame_3.Position = UDim2.new(0.995845139, 0, 0, 0)
-Frame_3.Size = UDim2.new(3.20982242, 0, 0.995197713, 0)
-
-Teleports.Name = "Teleports"
-Teleports.Parent = Frame_3
-Teleports.BackgroundColor3 = Color3.fromRGB(31, 31, 36)
-Teleports.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Teleports.BorderSizePixel = 0
-Teleports.Position = UDim2.new(-3.8714898e-08, 0, 0, 0)
-Teleports.Size = UDim2.new(0.379967451, 0, 1.00401604, 0)
-
-TeleportsLabel.Name = "TeleportsLabel"
-TeleportsLabel.Parent = Teleports
-TeleportsLabel.BackgroundColor3 = Color3.fromRGB(25, 25, 29)
-TeleportsLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TeleportsLabel.BorderSizePixel = 0
-TeleportsLabel.Size = UDim2.new(1, 0, 0.112000003, 0)
-TeleportsLabel.Font = Enum.Font.SourceSans
-TeleportsLabel.Text = "Teleports"
-TeleportsLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TeleportsLabel.TextScaled = true
-TeleportsLabel.TextSize = 14.000
-TeleportsLabel.TextWrapped = true
-
-Teleports_2.Name = "Teleports"
-Teleports_2.Parent = Teleports
-
-Button.Name = "Button"
-Button.Parent = Teleports_2
-Button.BackgroundColor3 = Color3.fromRGB(35, 35, 44)
-Button.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Button.BorderSizePixel = 0
-Button.Position = UDim2.new(0, 0, 0.111999758, 0)
-Button.Size = UDim2.new(0.99999994, 0, 0.0920000002, 0)
-Button.Font = Enum.Font.SourceSans
-Button.TextColor3 = Color3.fromRGB(255, 255, 255)
-Button.TextScaled = true
-Button.TextSize = 14.000
-Button.TextWrapped = true
-
-Other.Name = "Other"
-Other.Parent = Frame_3
-Other.BackgroundColor3 = Color3.fromRGB(31, 31, 36)
-Other.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Other.BorderSizePixel = 0
-Other.Position = UDim2.new(0.379967391, 0, 0, 0)
-Other.Size = UDim2.new(0.360932022, 0, 1.00401604, 0)
-
-BuyGrape.Name = "BuyGrape"
-BuyGrape.Parent = Other
-BuyGrape.BackgroundColor3 = Color3.fromRGB(35, 35, 44)
-BuyGrape.BorderColor3 = Color3.fromRGB(0, 0, 0)
-BuyGrape.BorderSizePixel = 0
-BuyGrape.Position = UDim2.new(0, 0, 0.00799975544, 0)
-BuyGrape.Size = UDim2.new(0.99999994, 0, 0.0948212966, 0)
-BuyGrape.Font = Enum.Font.SourceSans
-BuyGrape.Text = "BuyGrape"
-BuyGrape.TextColor3 = Color3.fromRGB(255, 255, 255)
-BuyGrape.TextScaled = true
-BuyGrape.TextSize = 14.000
-BuyGrape.TextWrapped = true
-
-NoBob.Name = "NoBob"
-NoBob.Parent = Other
-NoBob.BackgroundColor3 = Color3.fromRGB(35, 35, 44)
-NoBob.BorderColor3 = Color3.fromRGB(0, 0, 0)
-NoBob.BorderSizePixel = 0
-NoBob.Position = UDim2.new(0, 0, 0.0999997556, 0)
-NoBob.Size = UDim2.new(0.99999994, 0, 0.0948212966, 0)
-NoBob.Font = Enum.Font.SourceSans
-NoBob.Text = "NoBob"
-NoBob.TextColor3 = Color3.fromRGB(255, 255, 255)
-NoBob.TextScaled = true
-NoBob.TextSize = 14.000
-NoBob.TextWrapped = true
-
-InstaPrompt.Name = "InstaPrompt"
-InstaPrompt.Parent = Other
-InstaPrompt.BackgroundColor3 = Color3.fromRGB(35, 35, 44)
-InstaPrompt.BorderColor3 = Color3.fromRGB(0, 0, 0)
-InstaPrompt.BorderSizePixel = 0
-InstaPrompt.Position = UDim2.new(0, 0, 0.191999763, 0)
-InstaPrompt.Size = UDim2.new(0.99999994, 0, 0.0948212966, 0)
-InstaPrompt.Font = Enum.Font.SourceSans
-InstaPrompt.Text = "InstaPrompt"
-InstaPrompt.TextColor3 = Color3.fromRGB(255, 255, 255)
-InstaPrompt.TextScaled = true
-InstaPrompt.TextSize = 14.000
-InstaPrompt.TextWrapped = true
-
-InfAmmo.Name = "InfAmmo"
-InfAmmo.Parent = Other
-InfAmmo.BackgroundColor3 = Color3.fromRGB(35, 35, 44)
-InfAmmo.BorderColor3 = Color3.fromRGB(0, 0, 0)
-InfAmmo.BorderSizePixel = 0
-InfAmmo.Position = UDim2.new(0, 0, 0.283999741, 0)
-InfAmmo.Size = UDim2.new(0.99999994, 0, 0.0948212966, 0)
-InfAmmo.Font = Enum.Font.SourceSans
-InfAmmo.Text = "InfAmmo"
-InfAmmo.TextColor3 = Color3.fromRGB(255, 255, 255)
-InfAmmo.TextScaled = true
-InfAmmo.TextSize = 14.000
-InfAmmo.TextWrapped = true
-
-BuyRice.Name = "BuyRice"
-BuyRice.Parent = Other
-BuyRice.BackgroundColor3 = Color3.fromRGB(35, 35, 44)
-BuyRice.BorderColor3 = Color3.fromRGB(0, 0, 0)
-BuyRice.BorderSizePixel = 0
-BuyRice.Position = UDim2.new(0, 0, 0.375999749, 0)
-BuyRice.Size = UDim2.new(0.99999994, 0, 0.0948212966, 0)
-BuyRice.Font = Enum.Font.SourceSans
-BuyRice.Text = "BuyRice"
-BuyRice.TextColor3 = Color3.fromRGB(255, 255, 255)
-BuyRice.TextScaled = true
-BuyRice.TextSize = 14.000
-BuyRice.TextWrapped = true
-
-BuySeed.Name = "BuySeed"
-BuySeed.Parent = Other
-BuySeed.BackgroundColor3 = Color3.fromRGB(35, 35, 44)
-BuySeed.BorderColor3 = Color3.fromRGB(0, 0, 0)
-BuySeed.BorderSizePixel = 0
-BuySeed.Position = UDim2.new(0, 0, 0.467999756, 0)
-BuySeed.Size = UDim2.new(0.99999994, 0, 0.0948212966, 0)
-BuySeed.Font = Enum.Font.SourceSans
-BuySeed.Text = "BuySeeds"
-BuySeed.TextColor3 = Color3.fromRGB(255, 255, 255)
-BuySeed.TextScaled = true
-BuySeed.TextSize = 14.000
-BuySeed.TextWrapped = true
-
-NoDamage.Name = "NoDamage"
-NoDamage.Parent = Other
-NoDamage.BackgroundColor3 = Color3.fromRGB(35, 35, 44)
-NoDamage.BorderColor3 = Color3.fromRGB(0, 0, 0)
-NoDamage.BorderSizePixel = 0
-NoDamage.Position = UDim2.new(0, 0, 0.559999764, 0)
-NoDamage.Size = UDim2.new(0.99999994, 0, 0.0948212966, 0)
-NoDamage.Font = Enum.Font.SourceSans
-NoDamage.Text = "NoFallDamage"
-NoDamage.TextColor3 = Color3.fromRGB(255, 255, 255)
-NoDamage.TextScaled = true
-NoDamage.TextSize = 14.000
-NoDamage.TextWrapped = true
-
-InstantRespawn.Name = "InstantRespawn"
-InstantRespawn.Parent = Other
-InstantRespawn.BackgroundColor3 = Color3.fromRGB(35, 35, 44)
-InstantRespawn.BorderColor3 = Color3.fromRGB(0, 0, 0)
-InstantRespawn.BorderSizePixel = 0
-InstantRespawn.Position = UDim2.new(0, 0, 0.651999772, 0)
-InstantRespawn.Size = UDim2.new(0.99999994, 0, 0.0948212966, 0)
-InstantRespawn.Font = Enum.Font.SourceSans
-InstantRespawn.Text = "InstantRespawn (Broken)"
-InstantRespawn.TextColor3 = Color3.fromRGB(255, 255, 255)
-InstantRespawn.TextScaled = true
-InstantRespawn.TextSize = 14.000
-InstantRespawn.TextWrapped = true
-
-DupeTest.Name = "DupeTest"
-DupeTest.Parent = Other
-DupeTest.BackgroundColor3 = Color3.fromRGB(35, 35, 44)
-DupeTest.BorderColor3 = Color3.fromRGB(0, 0, 0)
-DupeTest.BorderSizePixel = 0
-DupeTest.Position = UDim2.new(0, 0, 0.743999779, 0)
-DupeTest.Size = UDim2.new(1, 0, 0.105415292, 0)
-DupeTest.Font = Enum.Font.SourceSans
-DupeTest.Text = " DupeTest (HOLD ITEM FIRST)"
-DupeTest.TextColor3 = Color3.fromRGB(255, 255, 255)
-DupeTest.TextScaled = true
-DupeTest.TextSize = 14.000
-DupeTest.TextWrapped = true
-
-NoHunger.Name = "NoHunger"
-NoHunger.Parent = Other
-NoHunger.BackgroundColor3 = Color3.fromRGB(35, 35, 44)
-NoHunger.BorderColor3 = Color3.fromRGB(0, 0, 0)
-NoHunger.BorderSizePixel = 0
-NoHunger.Position = UDim2.new(-0.00662251655, 0, 0.847999752, 0)
-NoHunger.Size = UDim2.new(1, 0, 0.105415292, 0)
-NoHunger.Font = Enum.Font.SourceSans
-NoHunger.Text = "NoHunger"
-NoHunger.TextColor3 = Color3.fromRGB(255, 255, 255)
-NoHunger.TextScaled = true
-NoHunger.TextSize = 14.000
-NoHunger.TextWrapped = true
-
-FastGun.Name = "FastGun"
-FastGun.Parent = Other
-FastGun.BackgroundColor3 = Color3.fromRGB(35, 35, 44)
-FastGun.BorderColor3 = Color3.fromRGB(0, 0, 0)
-FastGun.BorderSizePixel = 0
-FastGun.Position = UDim2.new(1, 0, -2.44140608e-07, 0)
-FastGun.Size = UDim2.new(0.720955253, 0, 0.0948212966, 0)
-FastGun.Font = Enum.Font.SourceSans
-FastGun.Text = "FastGun"
-FastGun.TextColor3 = Color3.fromRGB(255, 255, 255)
-FastGun.TextScaled = true
-FastGun.TextSize = 14.000
-FastGun.TextWrapped = true
-
-OnePunch.Name = "OnePunch"
-OnePunch.Parent = Other
-OnePunch.BackgroundColor3 = Color3.fromRGB(35, 35, 44)
-OnePunch.BorderColor3 = Color3.fromRGB(0, 0, 0)
-OnePunch.BorderSizePixel = 0
-OnePunch.Position = UDim2.new(1, 0, 0.11199975, 0)
-OnePunch.Size = UDim2.new(0.720955253, 0, 0.0948212966, 0)
-OnePunch.Font = Enum.Font.SourceSans
-OnePunch.Text = "OnePunch"
-OnePunch.TextColor3 = Color3.fromRGB(255, 255, 255)
-OnePunch.TextScaled = true
-OnePunch.TextSize = 14.000
-OnePunch.TextWrapped = true
-
-GunInstaKill.Name = "GunInstaKill"
-GunInstaKill.Parent = Other
-GunInstaKill.BackgroundColor3 = Color3.fromRGB(35, 35, 44)
-GunInstaKill.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GunInstaKill.BorderSizePixel = 0
-GunInstaKill.Position = UDim2.new(1, 0, 0.203999743, 0)
-GunInstaKill.Size = UDim2.new(0.720955253, 0, 0.0948212966, 0)
-GunInstaKill.Font = Enum.Font.SourceSans
-GunInstaKill.Text = "GunInstaKill"
-GunInstaKill.TextColor3 = Color3.fromRGB(255, 255, 255)
-GunInstaKill.TextScaled = true
-GunInstaKill.TextSize = 14.000
-GunInstaKill.TextWrapped = true
-
-NoSafe.Name = "NoSafe"
-NoSafe.Parent = Other
-NoSafe.BackgroundColor3 = Color3.fromRGB(35, 35, 44)
-NoSafe.BorderColor3 = Color3.fromRGB(0, 0, 0)
-NoSafe.BorderSizePixel = 0
-NoSafe.Position = UDim2.new(1, 0, 0.295999736, 0)
-NoSafe.Size = UDim2.new(0.720955253, 0, 0.0948212966, 0)
-NoSafe.Font = Enum.Font.SourceSans
-NoSafe.Text = "NoSafeZone"
-NoSafe.TextColor3 = Color3.fromRGB(255, 255, 255)
-NoSafe.TextScaled = true
-NoSafe.TextSize = 14.000
-NoSafe.TextWrapped = true
-
-Frame_4.Parent = Frame
-Frame_4.BackgroundColor3 = Color3.fromRGB(38, 40, 43)
-Frame_4.BorderColor3 = Color3.fromRGB(62, 62, 62)
-Frame_4.BorderSizePixel = 0
-Frame_4.Position = UDim2.new(6.45806324e-08, 0, -9.98032093e-08, 0)
-Frame_4.Size = UDim2.new(1.00000012, 0, 0.179681003, 0)
-
-Jupito.Name = "Jupito"
-Jupito.Parent = Frame_4
-Jupito.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Jupito.BackgroundTransparency = 1.000
-Jupito.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Jupito.BorderSizePixel = 0
-Jupito.Position = UDim2.new(0.0200297143, 0, 0.219166353, 0)
-Jupito.Size = UDim2.new(0.433336616, 0, 0.541722715, 0)
-Jupito.Font = Enum.Font.Roboto
-Jupito.Text = "JupitoGang"
-Jupito.TextColor3 = Color3.fromRGB(255, 255, 255)
-Jupito.TextScaled = true
-Jupito.TextSize = 14.000
-Jupito.TextWrapped = true
-Jupito.TextXAlignment = Enum.TextXAlignment.Left
-
-CloseButton.Name = "CloseButton"
-CloseButton.Parent = Frame_4
-CloseButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-CloseButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CloseButton.BorderSizePixel = 0
-CloseButton.Position = UDim2.new(0.883982539, 0, 0.0182246063, 0)
-CloseButton.Size = UDim2.new(0.114122197, 0, 0.911230326, 0)
-CloseButton.Font = Enum.Font.Ubuntu
-CloseButton.Text = "X"
-CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-CloseButton.TextScaled = true
-CloseButton.TextSize = 14.000
-CloseButton.TextWrapped = true
-
-OpenButton.Name = "OpenButton"
-OpenButton.Parent = JupitoGang
-OpenButton.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
-OpenButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-OpenButton.BorderSizePixel = 0
-OpenButton.Position = UDim2.new(0.0204978045, 0, 0.900685072, 0)
-OpenButton.Size = UDim2.new(0.131771594, 0, 0.0573663637, 0)
-OpenButton.Font = Enum.Font.RobotoMono
-OpenButton.Text = "Open Jupito"
-OpenButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-OpenButton.TextScaled = true
-OpenButton.TextSize = 14.000
-OpenButton.TextWrapped = true
-
--- Scripts:
-
-local function OUOTQ_fake_script() -- Teleports.LocalScript 
-	local script = Instance.new('LocalScript', Teleports)
-
-	-- Parent the script under the 'Teleports' frame or adjust references accordingly
-	local teleportsFolder = script.Parent.Teleports
-	local buttonTemplate = teleportsFolder.Button -- The template button
-	
-	-- Function to teleport the player to a specific position and make them look at a target
-	local function teleportPlayer(destination, lookAt)
-		local player = game.Players.LocalPlayer
-		if player and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
-			-- Teleport the player
-			player.Character.HumanoidRootPart.CFrame = CFrame.new(destination, lookAt)
+local function getSettingModule(moduleName)
+	local char = player.Character or player.CharacterAdded:Wait()
+	for _,v in pairs(char:GetDescendants()) do
+		if v:IsA("ModuleScript") and v.Name == moduleName then
+			return v
 		end
 	end
-	
-	-- Function to add a teleport button by copying the template
-	local function addButton(name, destination, lookAt)
-		local newButton = buttonTemplate:Clone() -- Clone the existing button
-		newButton.Name = name .. "Button"
-		newButton.Text = name
-		newButton.Position = UDim2.new(0, 0, 0, #teleportsFolder:GetChildren() * 20) -- Adjust vertical spacing
-		newButton.Parent = teleportsFolder
-	
-		-- Connect the button click to teleport function
-		newButton.MouseButton1Click:Connect(function()
-			teleportPlayer(destination, lookAt)
-		end)
-	end
-	
-	-- Locations with lookAt values
-	local locations = {
-		{name = "Guns Shop 1", position = Vector3.new(-1006.58356, 254.004608, -817.199097), lookAt = Vector3.new(-0.0523939244, 0.116114356, -0.991852999)},
-		{name = "Guns Shop 2", position = Vector3.new(-129.877258, 282.965973, -796.901062), lookAt = Vector3.new(-0.072124593, 0.00113434147, -0.997394979)},
-		{name = "Pasillo Hotel", position = Vector3.new(-24.5520306, 416.43338, -454.355347), lookAt = Vector3.new(1, 0, 0)},
-		{name = "Lavanderia", position = Vector3.new(-982.799316, 252.941132, -682.534668), lookAt = Vector3.new(-0.469494909, 0.0376266912, -0.882133007)},
-		{name = "Vendedor Arroz", position = Vector3.new(81065.0703, 133132.984, 167.565689), lookAt = Vector3.new(-0.31119433, 1.00292139e-08, -0.950346291)},
-		{name = "Exotic Dealer", position = Vector3.new(-1521.92236, 273.35968, -988.202942), lookAt = Vector3.new(1, 0, 0)},
-		{name = "Bank", position = Vector3.new(-130.178146, 283.632904, -1200.91504), lookAt = Vector3.new(-0.0312261377, 6.22671266e-08, -0.999512374)},
-		{name = "W33d Seller", position = Vector3.new(-630.154541, 252.798019, -730.857178), lookAt = Vector3.new(0, 0, 1)},
-	}
-	
-	-- Add teleport buttons for all locations
-	for _, location in ipairs(locations) do
-		addButton(location.name, location.position, location.lookAt)
-	end
-	
-	-- Delete the template button after initializing
-	buttonTemplate:Destroy()
-	
 end
-coroutine.wrap(OUOTQ_fake_script)()
-local function JUTL_fake_script() -- BuyGrape.LocalScript 
-	local script = Instance.new('LocalScript', BuyGrape)
 
-	script.Parent.MouseButton1Click:Connect(function()
-		local args = {
-			[1] = "GrapeDrank"
-		}
-	
-		game:GetService("ReplicatedStorage"):WaitForChild("ExoticShopRemote"):InvokeServer(unpack(args))
-	end)
-	
-end
-coroutine.wrap(JUTL_fake_script)()
-local function ZJNHG_fake_script() -- NoBob.LocalScript 
-	local script = Instance.new('LocalScript', NoBob)
+------------------------------------------------
+-- INF AMMO LOGIC
+------------------------------------------------
 
-	script.Parent.MouseButton1Click:Connect(function()
-		game.Players.LocalPlayer.PlayerGui:WaitForChild("Tilt"):Destroy()
-	end)
-	
-end
-coroutine.wrap(ZJNHG_fake_script)()
-local function JWICNN_fake_script() -- InstaPrompt.LocalScript 
-	local script = Instance.new('LocalScript', InstaPrompt)
+infAmmoBtn.MouseButton1Click:Connect(function()
+	local settingModule = getSettingModule("Setting")
+	if not settingModule then return end
 
-	script.Parent.MouseButton1Click:Connect(function()
-		for _, prompt in pairs(game:GetDescendants()) do
-			if prompt:IsA("ProximityPrompt") then
-				prompt.HoldDuration = 0
+	local gunSettings = require(settingModule)
+	local originalAmmo = gunSettings.Ammo
+	local originalMax = gunSettings.MaxAmmo
+
+	-- Mantiene el ammo siempre al valor original
+	task.spawn(function()
+		while true do
+			task.wait(0.05)
+			if gunSettings.Ammo < originalAmmo then
+				gunSettings.Ammo = originalAmmo
+			end
+			if gunSettings.MaxAmmo ~= originalMax then
+				gunSettings.MaxAmmo = originalMax
 			end
 		end
-	
-	
-		game.DescendantAdded:Connect(function(descendant)
-			if descendant:IsA("ProximityPrompt") then
-				descendant.HoldDuration = 0
-			end
-		end)
 	end)
-	
-end
-coroutine.wrap(JWICNN_fake_script)()
-local function LPXWET_fake_script() -- InfAmmo.LocalScript 
-	local script = Instance.new('LocalScript', InfAmmo)
 
-	script.Parent.MouseButton1Click:Connect(function()
-		-- Script to find LocalPlayer's 'Setting' ModuleScript in Workspace
-	
-		-- Define a function to find a module script by name in a given model
-		local function findModuleScriptInCharacter(character, moduleName)
-			for _, descendant in ipairs(character:GetDescendants()) do
-				if descendant:IsA("ModuleScript") and descendant.Name == moduleName then
-					return descendant
-				end
-			end
-			return nil  -- Return nil if not found
-		end
-	
-		-- Main execution
-		local Players = game:GetService("Players")
-		local Workspace = game:GetService("Workspace")
-	
-		local localPlayer = Players.LocalPlayer  -- Get the local player
-		if localPlayer then
-			local character = localPlayer.Character or localPlayer.CharacterAdded:Wait()  -- Wait if character not yet loaded
-			local settingModule = findModuleScriptInCharacter(character, "Setting")
-			local gun = settingModule  -- Assigning the found moduleScript to 'gun'
-	
-			if settingModule then
-				local settings = require(gun)  -- Require the module script
-				settings.LimitedAmmoEnabled = false
-				settings.AmmoPerMag = 999999
-				settings.Ammo = 999999
-				settings.MaxAmmo = 999999
-				print("Test: ".. settings.Ammo)
-			else
-				warn("'Setting' ModuleScript not found in the character.")
-			end
-		else
-			warn("LocalPlayer not found.")
-		end
-	end)
-	
-end
-coroutine.wrap(LPXWET_fake_script)()
-local function FFXVQ_fake_script() -- BuyRice.LocalScript 
-	local script = Instance.new('LocalScript', BuyRice)
+	infAmmoBtn.Text = "Infinite Ammo ON"
+end)
 
-	script.Parent.MouseButton1Click:Connect(function()
-		local args = {
-			[1] = "RiceBag"
-		}
-	
-		game:GetService("ReplicatedStorage"):WaitForChild("ExoticShopRemote"):InvokeServer(unpack(args))
-	end)
-	
-end
-coroutine.wrap(FFXVQ_fake_script)()
-local function WZLG_fake_script() -- BuySeed.LocalScript 
-	local script = Instance.new('LocalScript', BuySeed)
+------------------------------------------------
+-- INF DAMAGE LOGIC
+------------------------------------------------
 
-	script.Parent.MouseButton1Click:Connect(function()
-		local args = {
-			[1] = "Seeds"
-		}
-	
-		game:GetService("ReplicatedStorage"):WaitForChild("ExoticShopRemote"):InvokeServer(unpack(args))
-	end)
-	
-end
-coroutine.wrap(WZLG_fake_script)()
-local function AOILFM_fake_script() -- NoDamage.LocalScript 
-	local script = Instance.new('LocalScript', NoDamage)
+dmgBtn.MouseButton1Click:Connect(function()
+	local dmg = tonumber(dmgBox.Text)
+	if not dmg then return end
 
-	script.Parent.MouseButton1Click:Connect(function()
-		game:GetService("Players").LocalPlayer.Character.FallDamageRagdoll.Damage:Destroy()
-	
-	end)
-	
-end
-coroutine.wrap(AOILFM_fake_script)()
-local function BOIDMT_fake_script() -- InstantRespawn.LocalScript 
-	local script = Instance.new('LocalScript', InstantRespawn)
+	local settingModule = getSettingModule("Setting")
+	if not settingModule then return end
 
-	script.Parent.MouseButton1Click:Connect(function()
-		
-	end)
-	
-end
-coroutine.wrap(BOIDMT_fake_script)()
-local function YWSD_fake_script() -- DupeTest.LocalScript 
-	local script = Instance.new('LocalScript', DupeTest)
+	local gunSettings = require(settingModule)
+	gunSettings.BaseDamage = dmg
 
-	script.Parent.MouseButton1Click:Connect(function()
-		local player = game:GetService("Players").LocalPlayer
-		local character = player.Character or player.CharacterAdded:Wait()
-		local tool = character:FindFirstChildOfClass("Tool")
-		local safe = workspace:WaitForChild("1# Map"):WaitForChild("Safe")
-	
-		if tool and safe then
-			task.wait(0.5)
-			character.HumanoidRootPart.CFrame = safe:WaitForChild("ChestClicker").CFrame
-	
-			player.Character.Humanoid:UnequipTools()
-	
-			-- Prepare arguments
-			local argsBackpack = {
-				[1] = "Change",
-				[2] = tool.Name, -- Uses the name of the current tool
-				[3] = "Backpack",
-				[4] = safe
-			}
-	
-			-- Fire twice with "Backpack"
-			for _ = 1, 2 do
-				game:GetService("ReplicatedStorage"):WaitForChild("Inventory"):FireServer(unpack(argsBackpack))
-			end
-	
-			local argsInventory = {
-				[1] = "Change",
-				[2] = tool.Name,
-				[3] = "Inv",
-				[4] = safe
-			}
-			
-			game:GetService("ReplicatedStorage"):WaitForChild("Inventory"):FireServer(unpack(argsInventory))
-		end
-	end)
-	
-end
-coroutine.wrap(YWSD_fake_script)()
-local function NQWRC_fake_script() -- NoHunger.LocalScript 
-	local script = Instance.new('LocalScript', NoHunger)
-
-	script.Parent.MouseButton1Click:Connect(function()
-		local player = game:GetService("Players").LocalPlayer
-		local hungerBarScript = player:WaitForChild("PlayerGui")
-			:WaitForChild("Hunger")
-			:WaitForChild("Frame")
-			:WaitForChild("Frame")
-			:WaitForChild("Frame")
-			:FindFirstChild("HungerBarScript")
-	
-		if hungerBarScript and hungerBarScript:IsA("LocalScript") then
-			hungerBarScript.Disabled = true
-		end
-	end)
-	
-end
-coroutine.wrap(NQWRC_fake_script)()
-local function BWVO_fake_script() -- FastGun.LocalScript 
-	local script = Instance.new('LocalScript', FastGun)
-
-	script.Parent.MouseButton1Click:Connect(function()
-		-- Script to find LocalPlayer's 'Setting' ModuleScript in Workspace
-	
-		-- Define a function to find a module script by name in a given model
-		local function findModuleScriptInCharacter(character, moduleName)
-			for _, descendant in ipairs(character:GetDescendants()) do
-				if descendant:IsA("ModuleScript") and descendant.Name == moduleName then
-					return descendant
-				end
-			end
-			return nil  -- Return nil if not found
-		end
-	
-		-- Main execution
-		local Players = game:GetService("Players")
-		local Workspace = game:GetService("Workspace")
-	
-		local localPlayer = Players.LocalPlayer  -- Get the local player
-		if localPlayer then
-			local character = localPlayer.Character or localPlayer.CharacterAdded:Wait()  -- Wait if character not yet loaded
-			local settingModule = findModuleScriptInCharacter(character, "Setting")
-			local gun = settingModule  -- Assigning the found moduleScript to 'gun'
-	
-			if settingModule then
-				local settings = require(gun)  -- Require the module script
-				settings.FireRate = 1 / 200
-				settings.Auto = true
-				settings.BurstFireEnabled = true
-				settings.BulletPerBurst = 1
-				settings.BurstRate = 1 / 175
-				print("Test: ".. settings.Ammo)
-			else
-				warn("'Setting' ModuleScript not found in the character.")
-			end
-		else
-			warn("LocalPlayer not found.")
-		end
-	end)
-	
-end
-coroutine.wrap(BWVO_fake_script)()
-local function WNQBQYX_fake_script() -- OnePunch.LocalScript 
-	local script = Instance.new('LocalScript', OnePunch)
-
-	script.Parent.MouseButton1Click:Connect(function()
-		-- Script to find LocalPlayer's 'Setting' ModuleScript in Workspace
-	
-		-- Define a function to find a module script by name in a given model
-		local function findModuleScriptInCharacter(character, moduleName)
-			for _, descendant in ipairs(character:GetDescendants()) do
-				if descendant:IsA("ModuleScript") and descendant.Name == moduleName then
-					return descendant
-				end
-			end
-			return nil  -- Return nil if not found
-		end
-	
-		-- Main execution
-		local Players = game:GetService("Players")
-		local Workspace = game:GetService("Workspace")
-	
-		local localPlayer = Players.LocalPlayer  -- Get the local player
-		if localPlayer then
-			local character = localPlayer.Character or localPlayer.CharacterAdded:Wait()  -- Wait if character not yet loaded
-			local settingModule = findModuleScriptInCharacter(character, "Melee_Settings")
-			local punch = settingModule  -- Assigning the found moduleScript to 'gun'
-	
-			if settingModule then
-				local punchSettings = require(punch)
-				punchSettings.BaseDamage = 99999
-				punchSettings.AttackCooldown = 1 / 10000
-			else
-				warn("'Setting' ModuleScript not found in the character.")
-			end
-		else
-			warn("LocalPlayer not found.")
-		end
-	end)
-	
-end
-coroutine.wrap(WNQBQYX_fake_script)()
-local function THPU_fake_script() -- GunInstaKill.LocalScript 
-	local script = Instance.new('LocalScript', GunInstaKill)
-
-	script.Parent.MouseButton1Click:Connect(function()
-		-- Script to find LocalPlayer's 'Setting' ModuleScript in Workspace
-	
-		-- Define a function to find a module script by name in a given model
-		local function findModuleScriptInCharacter(character, moduleName)
-			for _, descendant in ipairs(character:GetDescendants()) do
-				if descendant:IsA("ModuleScript") and descendant.Name == moduleName then
-					return descendant
-				end
-			end
-			return nil  -- Return nil if not found
-		end
-	
-		-- Main execution
-		local Players = game:GetService("Players")
-		local Workspace = game:GetService("Workspace")
-	
-		local localPlayer = Players.LocalPlayer  -- Get the local player
-		if localPlayer then
-			local character = localPlayer.Character or localPlayer.CharacterAdded:Wait()  -- Wait if character not yet loaded
-			local settingModule = findModuleScriptInCharacter(character, "Setting")
-			local gun = settingModule  -- Assigning the found moduleScript to 'gun'
-	
-			if settingModule then
-				local settings = require(gun)  -- Require the module script
-				settings.BaseDamage = 100
-			else
-				warn("'Setting' ModuleScript not found in the character.")
-			end
-		else
-			warn("LocalPlayer not found.")
-		end
-	end)
-	
-end
-coroutine.wrap(THPU_fake_script)()
-local function XWQPLIY_fake_script() -- NoSafe.LocalScript 
-	local script = Instance.new('LocalScript', NoSafe)
-
-	script.Parent.MouseButton1Click:Connect(function()
-		local Players = game:GetService("Players")
-		local localPlayer = Players.LocalPlayer
-	
-		local function removeSafeFieldFromOthers()
-			for _, player in ipairs(Players:GetPlayers()) do
-				if player ~= localPlayer and player.Character then
-					local safeField = player.Character:FindFirstChild("SafeField")
-					if safeField then
-						safeField:Destroy()
-						print("Removed SafeField from", player.Name)
-					end
-				end
-			end
-		end
-	
-		-- Call the function to remove SafeField
-		removeSafeFieldFromOthers()
-	
-		-- Optionally, repeat periodically to handle new characters
-		Players.PlayerAdded:Connect(function(player)
-			player.CharacterAdded:Connect(function(character)
-				task.wait(1) -- Small delay to ensure everything loads
-				if player ~= localPlayer then
-					local safeField = character:FindFirstChild("SafeField")
-					if safeField then
-						safeField:Destroy()
-						print("Removed SafeField from", player.Name)
-					end
-				end
-			end)
-		end)
-	
-	end)
-	
-end
-coroutine.wrap(XWQPLIY_fake_script)()
-local function HSJVIJD_fake_script() -- CloseButton.LocalScript 
-	local script = Instance.new('LocalScript', CloseButton)
-
-	script.Parent.MouseButton1Click:Connect(function()
-		script.Parent.Parent.Parent.Parent.OpenButton.Visible = true
-		script.Parent.Parent.Parent.Visible = false
-	end)
-end
-coroutine.wrap(HSJVIJD_fake_script)()
-local function PIYYSH_fake_script() -- Frame_4.LocalScript 
-	local script = Instance.new('LocalScript', Frame_4)
-
-	script.Parent.Draggable = true
-end
-coroutine.wrap(PIYYSH_fake_script)()
-local function YZPHY_fake_script() -- Frame.LocalScript 
-	local script = Instance.new('LocalScript', Frame)
-
-	script.Parent.Draggable = true
-end
-coroutine.wrap(YZPHY_fake_script)()
-local function KYBPZLU_fake_script() -- OpenButton.LocalScript 
-	local script = Instance.new('LocalScript', OpenButton)
-
-	script.Parent.MouseButton1Click:Connect(function()
-		script.Parent.Visible = false
-		script.Parent.Parent.Frame.Visible = true
-	end)
-end
-coroutine.wrap(KYBPZLU_fake_script)()
+	dmgBtn.Text = "Damage Set: "..dmg
+end)
